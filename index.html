@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DGM Growth Plan & Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600&family=Barlow:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#080808;--card:#111111;--border:#1E1E1E;--border-mid:#2A2A2A;
+  --copper:#BB725A;--copper-light:#D4937D;--copper-dark:#8A4F3B;--white:#F5F3F0;--muted:#777777;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;position:relative;-webkit-font-smoothing:antialiased;}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.04;mix-blend-mode:overlay;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,64px);}
+section{padding:clamp(56px,9vw,120px) 0;position:relative;}
+h1,h2,h3,.bebas{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:0.02em;line-height:0.98;}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:0.42em;font-size:clamp(0.62rem,1.3vw,0.74rem);color:var(--copper);margin-bottom:clamp(18px,3vw,28px);display:flex;align-items:center;gap:14px;}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--copper);display:inline-block;}
+.sec-num{font-family:'Barlow Condensed',sans-serif;font-weight:300;letter-spacing:0.4em;color:var(--copper-dark);font-size:0.7rem;text-transform:uppercase;}
+h2.section-title{font-size:clamp(2.4rem,7vw,4.6rem);color:var(--white);margin-bottom:clamp(28px,4vw,48px);text-transform:uppercase;}
+.lead{font-family:'Barlow',sans-serif;font-weight:300;font-size:clamp(1rem,2vw,1.18rem);color:#cfccc6;max-width:64ch;}
+p{font-weight:300;color:#bdbab4;}
+p strong{color:var(--white);font-weight:500;}
+.serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;color:var(--copper-light);}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--copper-dark) 18%,var(--copper) 50%,var(--copper-dark) 82%,transparent);border:none;margin:0 auto;width:100%;opacity:0.55;}
+.divider-block{padding:0;}
+.divider-block .wrap{padding-top:0;padding-bottom:0;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}.lockup-mark span{animation:none !important;}}
+
+/* HERO */
+header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:clamp(36px,6vw,56px);padding-bottom:clamp(36px,6vw,56px);position:relative;}
+header.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:40%;background:radial-gradient(ellipse at 30% 100%,rgba(187,114,90,0.10),transparent 70%);pointer-events:none;}
+.lockup{display:flex;align-items:center;gap:14px;z-index:2;}
+.lockup-mark{display:flex;gap:3px;align-items:flex-end;height:26px;}
+.lockup-mark span{display:block;width:3px;background:var(--copper);border-radius:1px;animation:grind 2.2s ease-in-out infinite;}
+.lockup-mark span:nth-child(1){height:40%;animation-delay:0s;}
+.lockup-mark span:nth-child(2){height:75%;animation-delay:.2s;}
+.lockup-mark span:nth-child(3){height:55%;animation-delay:.4s;}
+.lockup-mark span:nth-child(4){height:100%;animation-delay:.6s;}
+@keyframes grind{0%,100%{transform:scaleY(1);opacity:0.85;}50%{transform:scaleY(0.45);opacity:1;}}
+.lockup-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.34em;font-size:0.82rem;color:var(--white);}
+.hero-body{z-index:2;}
+.hero-client{font-family:'Barlow Condensed',sans-serif;font-weight:400;letter-spacing:0.34em;text-transform:uppercase;color:var(--copper);font-size:clamp(0.8rem,2vw,1rem);margin-bottom:clamp(20px,3vw,30px);}
+.hero-title{font-size:clamp(3rem,11vw,8rem);text-transform:uppercase;color:var(--white);line-height:0.86;}
+.hero-title .row2{color:var(--copper);display:block;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;color:var(--copper-light);font-size:clamp(1.2rem,3vw,1.9rem);margin-top:clamp(20px,3vw,30px);max-width:40ch;line-height:1.35;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,42px);margin-top:clamp(30px,4vw,46px);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.18em;font-size:0.78rem;color:var(--muted);}
+.hero-meta span strong{color:var(--white);font-weight:500;}
+
+/* GOAL / STATEMENT */
+.statement{border-left:2px solid var(--copper);padding:clamp(28px,4vw,52px) clamp(24px,4vw,56px);background:linear-gradient(100deg,rgba(187,114,90,0.06),transparent 60%);margin:clamp(20px,3vw,28px) 0 0;}
+.statement p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.4rem,3.6vw,2.3rem);line-height:1.32;color:var(--white);}
+.statement .accent{color:var(--copper-light);}
+.lead{margin-bottom:clamp(20px,3vw,28px);}
+
+/* CARDS / GRIDS */
+.card-grid{display:grid;gap:clamp(14px,2vw,22px);grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.card{background:var(--card);border:1px solid var(--border);padding:clamp(26px,3.4vw,38px);transition:border-color .5s ease,transform .5s ease;}
+.card:hover{border-color:var(--border-mid);transform:translateY(-3px);}
+.card h3{font-size:clamp(1.5rem,3vw,1.9rem);color:var(--white);margin-bottom:14px;text-transform:uppercase;}
+.card .micro{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.24em;font-size:0.64rem;color:var(--copper);margin-bottom:16px;}
+.card p{font-size:0.96rem;}
+
+/* ROADMAP LEVELS */
+.roadmap-track{display:grid;gap:clamp(14px,2vw,18px);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:clamp(28px,4vw,44px);}
+.level{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3vw,32px);position:relative;overflow:hidden;transition:border-color .5s ease,transform .5s ease;display:flex;flex-direction:column;}
+.level:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.level::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--copper-dark),var(--copper));}
+.level-badge{width:clamp(48px,7vw,58px);height:clamp(48px,7vw,58px);border-radius:50%;border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;margin-bottom:clamp(18px,2.5vw,24px);background:radial-gradient(circle at 50% 30%,rgba(187,114,90,0.14),transparent 70%);}
+.level-badge svg{width:26px;height:26px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.level-num{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.3em;font-size:0.62rem;color:var(--copper);margin-bottom:6px;}
+.level h3{font-size:clamp(1.5rem,3vw,1.8rem);color:var(--white);text-transform:uppercase;margin-bottom:14px;line-height:0.95;}
+.level-focus{font-family:'Barlow Condensed',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;font-size:0.68rem;color:var(--black);background:var(--copper);display:inline-block;padding:4px 12px;margin-bottom:18px;align-self:flex-start;}
+.level ul{list-style:none;margin-top:auto;}
+.level li{font-size:0.9rem;color:#bdbab4;padding:7px 0 7px 16px;position:relative;border-top:1px solid var(--border);}
+.level li:first-child{border-top:none;}
+.level li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:1px;background:var(--copper);}
+.level-tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.62rem;color:var(--copper-light);margin-top:18px;padding-top:16px;border-top:1px solid var(--border-mid);}
+
+/* RESPONSIBILITY PROGRESSION */
+.progression{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(28px,4vw,44px);}
+.prog-step{position:relative;padding-top:26px;}
+.prog-step::before{content:"";position:absolute;top:6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 4px rgba(187,114,90,0.12);}
+.prog-step::after{content:"";position:absolute;top:11px;left:11px;right:-22px;height:1px;background:linear-gradient(90deg,var(--copper-dark),transparent);}
+.prog-step:last-child::after{display:none;}
+.prog-step h4{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--white);text-transform:uppercase;margin-bottom:8px;}
+.prog-step p{font-size:0.9rem;}
+
+/* COMPENSATION */
+.comp-grid{display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:clamp(28px,4vw,44px);}
+.comp-card{background:var(--card);border:1px solid var(--border);padding:clamp(28px,3.4vw,38px);text-align:center;transition:border-color .5s ease,transform .5s ease;}
+.comp-card:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.comp-icon{width:56px;height:56px;border-radius:50%;background:var(--black);border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;}
+.comp-icon svg{width:26px;height:26px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.comp-card h3{font-size:clamp(1.3rem,2.6vw,1.6rem);color:var(--white);text-transform:uppercase;margin-bottom:12px;}
+.comp-card p{font-size:0.93rem;}
+.commitment{border:1px solid var(--copper-dark);background:linear-gradient(100deg,rgba(187,114,90,0.06),transparent 60%);padding:clamp(28px,4vw,44px);margin-top:clamp(24px,3vw,32px);display:flex;gap:clamp(18px,3vw,28px);align-items:flex-start;}
+.commitment .c-star{font-size:1.6rem;color:var(--copper);line-height:1;flex-shrink:0;}
+.commitment .c-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.24em;font-size:0.68rem;color:var(--copper);display:block;margin-bottom:10px;}
+.commitment p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.4;color:var(--white);}
+
+/* SUCCESS METRICS */
+.metrics-grid{display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:clamp(28px,4vw,44px);}
+.metric{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3vw,32px);text-align:center;transition:border-color .5s ease,transform .5s ease;}
+.metric:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.metric-icon{width:50px;height:50px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;}
+.metric-icon svg{width:30px;height:30px;stroke:var(--copper);fill:none;stroke-width:1.5;}
+.metric h4{font-family:'Barlow Condensed',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--white);font-size:0.98rem;line-height:1.3;}
+
+/* NEXT STEPS */
+.steps{display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:clamp(24px,3vw,36px);}
+.step{border:1px solid var(--border);padding:clamp(26px,3.4vw,36px);position:relative;background:var(--card);transition:border-color .5s ease,transform .5s ease;}
+.step:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.step .s-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,6vw,3.6rem);color:var(--copper-dark);line-height:0.8;margin-bottom:16px;display:block;}
+.step h3{font-size:1.4rem;text-transform:uppercase;color:var(--white);margin-bottom:10px;line-height:1;}
+.step p{font-size:0.92rem;}
+
+/* FOOTER */
+footer{padding:clamp(50px,7vw,80px) 0 clamp(40px,5vw,60px);text-align:center;position:relative;}
+footer .lockup{justify-content:center;}
+.footer-mark{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,7vw,4.4rem);color:var(--white);text-transform:uppercase;letter-spacing:0.04em;margin-top:clamp(30px,4vw,46px);}
+.footer-tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--copper-light);font-size:clamp(1.1rem,3vw,1.5rem);margin-top:10px;}
+.footer-meta{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.3em;font-size:0.66rem;color:var(--muted);margin-top:24px;}
+
+/* ============ HOW GROWTH HAPPENS (flow infographic) ============ */
+.flow{display:grid;gap:0;margin-top:clamp(32px,5vw,52px);max-width:760px;margin-left:auto;margin-right:auto;}
+.flow-node{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,34px);align-items:center;background:var(--card);border:1px solid var(--border);padding:clamp(22px,3vw,30px) clamp(24px,3.4vw,38px);position:relative;transition:border-color .5s ease,transform .5s ease;overflow:hidden;}
+.flow-node:hover{border-color:var(--copper-dark);transform:translateX(4px);}
+.flow-node::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--copper),var(--copper-dark));opacity:0;transition:opacity .5s ease;}
+.flow-node:hover::before{opacity:1;}
+.flow-ico{width:clamp(46px,6vw,56px);height:clamp(46px,6vw,56px);border-radius:14px;background:radial-gradient(circle at 50% 30%,rgba(187,114,90,0.18),rgba(17,17,17,0.4));border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.flow-ico svg{width:26px;height:26px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.flow-node .fn-step{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.26em;font-size:0.6rem;color:var(--copper);margin-bottom:5px;}
+.flow-node h3{font-size:clamp(1.35rem,3vw,1.75rem);color:var(--white);text-transform:uppercase;line-height:0.98;margin-bottom:5px;}
+.flow-node p{font-size:0.9rem;}
+.flow-arrow{display:flex;justify-content:center;padding:9px 0;}
+.flow-arrow svg{width:20px;height:26px;stroke:var(--copper-dark);fill:none;stroke-width:1.5;}
+.flow-arrow .fa-line{stroke-dasharray:3 4;animation:flowdash 1.4s linear infinite;}
+@keyframes flowdash{to{stroke-dashoffset:-14;}}
+.flow-node.terminal{background:linear-gradient(100deg,rgba(187,114,90,0.10),transparent 65%);border-color:var(--copper-dark);}
+
+/* ============ EXAMPLE MILESTONES (timeline) ============ */
+.mstone{position:relative;margin-top:clamp(32px,5vw,52px);padding-left:clamp(28px,5vw,44px);}
+.mstone::before{content:"";position:absolute;left:clamp(8px,1.4vw,13px);top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--copper),var(--copper-dark) 60%,transparent);}
+.ms-item{position:relative;margin-bottom:clamp(16px,2.4vw,22px);}
+.ms-item:last-child{margin-bottom:0;}
+.ms-item::before{content:"";position:absolute;left:calc(-1 * clamp(28px,5vw,44px) + clamp(4px,0.9vw,9px));top:clamp(24px,3vw,30px);width:11px;height:11px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 4px rgba(187,114,90,0.14);}
+.ms-card{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3vw,34px);transition:border-color .5s ease,transform .5s ease;}
+.ms-card:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.ms-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap;}
+.ms-phase{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--white);text-transform:uppercase;line-height:0.9;}
+.ms-badge{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.2em;font-size:0.58rem;color:var(--black);background:var(--copper);padding:4px 11px;}
+.ms-ex{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.24em;font-size:0.6rem;color:var(--copper);margin-bottom:12px;}
+.ms-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 26px;}
+.ms-list li{font-size:0.92rem;color:#bdbab4;padding-left:16px;position:relative;}
+.ms-list li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:1px;background:var(--copper);}
+
+/* ============ BUSINESS GROWTH TIMELINE (unlock stages) ============ */
+.evolve{display:grid;gap:clamp(14px,2vw,18px);margin-top:clamp(32px,5vw,52px);}
+.stage{background:var(--card);border:1px solid var(--border);padding:clamp(24px,3.2vw,36px);display:grid;grid-template-columns:auto 1fr;gap:clamp(22px,3.5vw,44px);align-items:center;position:relative;overflow:hidden;transition:border-color .5s ease,transform .5s ease;}
+.stage:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(187,114,90,0.05),transparent 55%);opacity:0;transition:opacity .5s ease;pointer-events:none;}
+.stage:hover::after{opacity:1;}
+.stage-mark{text-align:center;min-width:clamp(90px,14vw,150px);}
+.stage-tier{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,4rem);color:var(--copper);line-height:0.85;}
+.stage-tier .plus{color:var(--copper-dark);}
+.stage-unlock{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.2em;font-size:0.56rem;color:var(--muted);margin-top:8px;display:flex;align-items:center;justify-content:center;gap:6px;}
+.stage-unlock svg{width:11px;height:11px;stroke:var(--copper);fill:none;stroke-width:2;}
+.stage-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--white);font-size:clamp(1rem,2.4vw,1.2rem);margin-bottom:12px;}
+.stage-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.stage-tags span{font-family:'Barlow Condensed',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.08em;font-size:0.72rem;color:#cfccc6;border:1px solid var(--border-mid);padding:5px 12px;border-radius:2px;}
+.stage.current{border-color:var(--border-mid);}
+.stage.current .stage-tier{font-size:clamp(1.4rem,3.4vw,2rem);color:var(--white);}
+.stage.peak{background:linear-gradient(100deg,rgba(187,114,90,0.12),transparent 60%);border-color:var(--copper);}
+.evolve-note{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.66rem;color:var(--muted);margin-top:22px;text-align:center;}
+
+/* ============ FOUNDER COMMITMENT ============ */
+.pledge{display:grid;gap:clamp(12px,1.8vw,16px);grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:clamp(28px,4vw,44px);}
+.pledge-item{background:var(--card);border:1px solid var(--border);padding:clamp(22px,2.8vw,28px);display:flex;gap:16px;align-items:flex-start;transition:border-color .5s ease,transform .5s ease;}
+.pledge-item:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.pledge-ico{width:38px;height:38px;border-radius:10px;background:var(--black);border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pledge-ico svg{width:19px;height:19px;stroke:var(--copper);fill:none;stroke-width:1.7;}
+.pledge-item p{font-size:0.96rem;color:#cfccc6;line-height:1.5;}
+.pull-quote{border-left:2px solid var(--copper);padding:clamp(28px,4vw,48px) clamp(24px,4vw,52px);background:linear-gradient(100deg,rgba(187,114,90,0.07),transparent 60%);margin-top:clamp(28px,4vw,44px);}
+.pull-quote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.4rem,3.6vw,2.3rem);line-height:1.34;color:var(--white);}
+.pull-quote .attrib{font-family:'Barlow Condensed',sans-serif;font-style:normal;text-transform:uppercase;letter-spacing:0.24em;font-size:0.66rem;color:var(--copper);margin-top:20px;display:block;}
+
+/* ============ REVENUE DISCLAIMER ============ */
+.disclaimer{border:1px solid var(--border);background:rgba(17,17,17,0.5);padding:clamp(20px,3vw,30px) clamp(22px,3.4vw,36px);margin-top:clamp(20px,3vw,28px);display:flex;gap:16px;align-items:flex-start;}
+.disclaimer svg{width:20px;height:20px;stroke:var(--copper);fill:none;stroke-width:1.6;flex-shrink:0;margin-top:2px;}
+.disclaimer p{font-family:'Barlow',sans-serif;font-weight:300;font-size:0.9rem;line-height:1.6;color:var(--muted);}
+.disclaimer strong{color:#bdbab4;font-weight:400;}
+
+/* ============ WHAT I'M LOOKING FOR ============ */
+.looking-grid{display:grid;gap:clamp(12px,1.8vw,16px);grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:clamp(28px,4vw,44px);}
+.look-item{background:var(--card);border:1px solid var(--border);padding:clamp(22px,2.8vw,30px);transition:border-color .5s ease,transform .5s ease;}
+.look-item:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.look-item .l-ico{width:40px;height:40px;border-radius:10px;background:radial-gradient(circle at 50% 30%,rgba(187,114,90,0.16),rgba(17,17,17,0.4));border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.look-item .l-ico svg{width:20px;height:20px;stroke:var(--copper);fill:none;stroke-width:1.7;}
+.look-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--white);font-size:1.05rem;margin-bottom:8px;line-height:1.1;}
+.look-item p{font-size:0.9rem;}
+.look-close{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--copper-light);font-size:clamp(1.2rem,3vw,1.7rem);text-align:center;margin-top:clamp(28px,4vw,40px);line-height:1.4;}
+
+/* ============ WHY THIS MATTERS ============ */
+.why-block{margin-top:clamp(28px,4vw,44px);}
+.why-list{display:grid;gap:clamp(12px,1.8vw,14px);}
+.why-row{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,2.5vw,26px);align-items:center;background:var(--card);border:1px solid var(--border);padding:clamp(20px,2.6vw,26px) clamp(22px,3vw,32px);transition:border-color .5s ease,transform .5s ease;}
+.why-row:hover{border-color:var(--copper-dark);transform:translateX(4px);}
+.why-row .wr-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3.6vw,2.3rem);color:var(--copper-dark);line-height:0.8;min-width:36px;}
+.why-row p{font-family:'Barlow',sans-serif;font-weight:400;color:#cfccc6;font-size:clamp(1rem,2.2vw,1.18rem);}
+.why-close{border:1px solid var(--copper-dark);background:linear-gradient(120deg,rgba(187,114,90,0.11),transparent 60%);padding:clamp(30px,4.5vw,52px);margin-top:clamp(24px,3vw,32px);text-align:center;}
+.why-close p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.5rem,3.8vw,2.4rem);line-height:1.36;color:var(--white);max-width:30ch;margin:0 auto;}
+
+/* ============ RESPONSIBILITY vs OPPORTUNITY (chart) ============ */
+.chart-wrap{margin-top:clamp(32px,5vw,52px);background:var(--card);border:1px solid var(--border);padding:clamp(24px,4vw,48px);position:relative;overflow:hidden;}
+.chart-wrap::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--copper-dark),var(--copper),var(--copper-dark));}
+.chart-legend{display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,32px);margin-bottom:clamp(20px,3vw,30px);}
+.chart-legend span{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.72rem;color:#cfccc6;display:flex;align-items:center;gap:9px;}
+.lg-swatch{width:22px;height:3px;border-radius:2px;}
+.lg-value{background:var(--copper);}
+.lg-comp{background:var(--copper-dark);}
+.lg-comp.dash{background:repeating-linear-gradient(90deg,var(--copper-dark) 0 5px,transparent 5px 9px);}
+.chart-svg{width:100%;height:auto;display:block;overflow:visible;}
+.chart-axis-y{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.22em;font-size:0.62rem;fill:var(--copper);}
+.chart-axis-x{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.6rem;fill:var(--muted);}
+.chart-mk-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.08em;font-size:0.62rem;fill:#cfccc6;}
+.chart-path-value{fill:none;stroke:var(--copper);stroke-width:2.5;stroke-linecap:round;}
+.chart-path-comp{fill:none;stroke:var(--copper-dark);stroke-width:2;stroke-dasharray:5 5;stroke-linecap:round;}
+.chart-area{fill:url(#chartGrad);opacity:0.5;}
+.chart-grid-line{stroke:var(--border);stroke-width:1;}
+.chart-mk{fill:var(--black);stroke:var(--copper);stroke-width:2;}
+.chart-caption{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--copper-light);font-size:clamp(1rem,2.4vw,1.35rem);margin-top:clamp(20px,3vw,30px);text-align:center;max-width:60ch;margin-left:auto;margin-right:auto;}
+.draw-anim{stroke-dasharray:1400;stroke-dashoffset:1400;}
+.in .draw-anim{animation:drawline 2.2s cubic-bezier(.4,.1,.2,1) forwards;}
+.in .draw-anim.delay{animation-delay:.4s;}
+@keyframes drawline{to{stroke-dashoffset:0;}}
+
+/* ============ LEADERSHIP SCORECARD (KPI cards) ============ */
+.kpi-grid{display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:clamp(32px,5vw,52px);}
+.kpi{background:var(--card);border:1px solid var(--border);padding:clamp(26px,3.2vw,34px);transition:border-color .5s ease,transform .5s ease;position:relative;overflow:hidden;}
+.kpi:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.kpi-top{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.kpi-ico{width:44px;height:44px;border-radius:11px;background:var(--black);border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.kpi-ico svg{width:22px;height:22px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.kpi h3{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--white);font-size:1.12rem;line-height:1;}
+.kpi p{font-size:0.88rem;margin-bottom:20px;}
+.kpi-bar{height:6px;background:var(--border);border-radius:4px;overflow:hidden;position:relative;}
+.kpi-bar span{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--copper-dark),var(--copper));border-radius:4px;transition:width 1.6s cubic-bezier(.2,.7,.2,1);}
+.kpi.in .kpi-bar span{width:var(--fill,70%);}
+.kpi-meta{display:flex;justify-content:space-between;margin-top:10px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:0.58rem;color:var(--muted);}
+.kpi-meta strong{color:var(--copper);font-weight:500;}
+
+/* ============ UPGRADED COMPENSATION WIDGETS ============ */
+.comp-card{text-align:left;position:relative;overflow:hidden;}
+.comp-card .comp-icon{margin:0 0 22px;}
+.comp-viz{margin-top:22px;height:64px;display:flex;align-items:flex-end;gap:6px;}
+/* stacked growth bars */
+.viz-bars{display:flex;align-items:flex-end;gap:8px;width:100%;height:100%;}
+.viz-bars i{flex:1;background:linear-gradient(180deg,var(--copper),var(--copper-dark));border-radius:3px 3px 0 0;height:0;transition:height 1.4s cubic-bezier(.2,.7,.2,1);opacity:0.85;}
+.comp-card.in .viz-bars i{height:var(--h,40%);}
+.comp-card.in .viz-bars i:nth-child(1){transition-delay:.05s;}
+.comp-card.in .viz-bars i:nth-child(2){transition-delay:.18s;}
+.comp-card.in .viz-bars i:nth-child(3){transition-delay:.31s;}
+.comp-card.in .viz-bars i:nth-child(4){transition-delay:.44s;}
+/* target rings */
+.viz-target{width:100%;height:100%;display:flex;align-items:center;justify-content:flex-start;}
+.viz-target svg{height:60px;width:60px;overflow:visible;}
+.viz-target circle{fill:none;}
+.viz-target .tr-ring{stroke:var(--border-mid);stroke-width:2;}
+.viz-target .tr-prog{stroke:var(--copper);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:150;stroke-dashoffset:150;transform:rotate(-90deg);transform-origin:center;}
+.comp-card.in .viz-target .tr-prog{animation:drawline 1.8s cubic-bezier(.2,.7,.2,1) forwards;--to:38;}
+.comp-card.in .viz-target .tr-prog{stroke-dashoffset:42;transition:stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1);}
+.viz-target .tr-dot{fill:var(--copper);}
+/* staircase */
+.viz-stair{display:flex;align-items:flex-end;gap:5px;width:100%;height:100%;}
+.viz-stair i{flex:1;background:linear-gradient(180deg,var(--copper-light),var(--copper-dark));border-radius:2px 2px 0 0;height:0;transition:height 1.2s cubic-bezier(.2,.7,.2,1);}
+.comp-card.in .viz-stair i{height:var(--h,30%);}
+.comp-card.in .viz-stair i:nth-child(1){transition-delay:.05s;}
+.comp-card.in .viz-stair i:nth-child(2){transition-delay:.16s;}
+.comp-card.in .viz-stair i:nth-child(3){transition-delay:.27s;}
+.comp-card.in .viz-stair i:nth-child(4){transition-delay:.38s;}
+.comp-card.in .viz-stair i:nth-child(5){transition-delay:.49s;}
+/* expanding org */
+.viz-org{width:100%;height:100%;display:flex;align-items:center;}
+.viz-org svg{height:60px;width:100%;overflow:visible;}
+.viz-org line{stroke:var(--copper-dark);stroke-width:1.2;}
+.viz-org circle{fill:var(--black);stroke:var(--copper);stroke-width:1.6;opacity:0;transition:opacity .6s ease;}
+.comp-card.in .viz-org circle{opacity:1;}
+.comp-card.in .viz-org circle:nth-child(6){transition-delay:.2s;}
+.comp-card.in .viz-org circle:nth-child(7){transition-delay:.35s;}
+.comp-card.in .viz-org circle:nth-child(8){transition-delay:.5s;}
+.comp-card.in .viz-org circle:nth-child(9){transition-delay:.65s;}
+
+/* ============ 12-MONTH VISION ============ */
+.vision-intro{max-width:64ch;}
+.vision-grid{display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:clamp(32px,5vw,52px);}
+.vcard{background:var(--card);border:1px solid var(--border);padding:clamp(28px,3.4vw,38px);position:relative;overflow:hidden;transition:border-color .5s ease,transform .5s ease;}
+.vcard:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.vcard::before{content:"";position:absolute;top:0;left:0;width:44px;height:2px;background:var(--copper);}
+.vcard-ico{width:52px;height:52px;border-radius:13px;background:radial-gradient(circle at 50% 30%,rgba(187,114,90,0.16),rgba(17,17,17,0.4));border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.vcard-ico svg{width:26px;height:26px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.vcard .vlabel{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.22em;font-size:0.62rem;color:var(--copper);margin-bottom:6px;}
+.vcard h3{font-size:clamp(1.5rem,3vw,1.9rem);color:var(--white);text-transform:uppercase;margin-bottom:18px;line-height:0.95;}
+.vcard ul{list-style:none;}
+.vcard li{font-size:0.93rem;color:#bdbab4;padding:9px 0 9px 18px;position:relative;border-top:1px solid var(--border);}
+.vcard li:first-child{border-top:none;}
+.vcard li::before{content:"";position:absolute;left:0;top:17px;width:7px;height:1px;background:var(--copper);}
+.result-block{margin-top:clamp(28px,4vw,44px);border:1px solid var(--copper-dark);background:linear-gradient(120deg,rgba(187,114,90,0.10),transparent 60%);padding:clamp(32px,4.5vw,52px);}
+.result-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.28em;font-size:0.68rem;color:var(--copper);margin-bottom:clamp(22px,3vw,30px);text-align:center;}
+.result-chain{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(8px,1.6vw,18px);}
+.result-chain .rc-item{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.3rem,3.4vw,2.1rem);color:var(--white);text-transform:uppercase;line-height:0.9;}
+.result-chain .rc-item.final{color:var(--copper);}
+.result-chain .rc-arrow{color:var(--copper-dark);font-size:clamp(1.1rem,2.6vw,1.7rem);}
+
+/* ============ SHARED SECTION FLOW ARROW (between stacked blocks) ============ */
+.mini-flow{display:flex;justify-content:center;padding:6px 0;}
+.mini-flow svg{width:16px;height:22px;stroke:var(--copper-dark);fill:none;stroke-width:1.6;}
+
+@media(max-width:760px){
+  .prog-step::after{display:none;}
+  .commitment{flex-direction:column;gap:14px;}
+  .flow-node{grid-template-columns:1fr;text-align:left;gap:14px;}
+  .stage{grid-template-columns:1fr;gap:14px;text-align:left;}
+  .stage-mark{text-align:left;}
+  .stage-unlock{justify-content:flex-start;}
+  .result-chain{flex-direction:column;gap:6px;}
+  .result-chain .rc-arrow{transform:rotate(90deg);}
+}
+
+@media print{
+  body{background:#fff;color:#000;}
+  .grain,header.hero::after{display:none;}
+  .reveal{opacity:1!important;transform:none!important;}
+  .level,.card,.comp-card,.metric,.step,.acc-item,.flow-node,.ms-card,.stage,.kpi,.vcard,.chart-wrap,.result-block,.pledge-item,.pull-quote,.look-item,.why-row,.why-close,.disclaimer{break-inside:avoid;}
+  section{padding:24px 0;}
+  header.hero{min-height:auto;}
+  .hero-title,h2.section-title,.level h3,.card h3,.flow-node h3,.ms-phase,.kpi h3,.vcard h3,.stage-tier{color:#111;}
+  p,.lead,.level li,.ms-list li,.vcard li{color:#333;}
+  .divider{opacity:1;}
+  .reveal,.draw-anim,.kpi-bar span,.viz-bars i,.viz-stair i{animation:none!important;opacity:1!important;}
+  .draw-anim{stroke-dashoffset:0!important;}
+}
+</style>
+</head>
+<body>
+<svg class="grain"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap" style="width:100%;">
+    <div class="lockup">
+      <div class="lockup-mark"><span></span><span></span><span></span><span></span></div>
+      <div class="lockup-name">Daily Grind Media</div>
+    </div>
+  </div>
+  <div class="wrap hero-body">
+    <div class="hero-client">Walter Growth Roadmap · Daily Grind Media</div>
+    <h1 class="hero-title">Growth Plan<span class="row2">& Roadmap</span></h1>
+    <p class="hero-sub">Building your role. Growing the business. Winning together.</p>
+    <div class="hero-meta">
+      <span>Prepared By <strong>Lo | Daily Grind Media</strong></span>
+      <span>Type <strong>Strategic Roadmap</strong></span>
+      <span>Status <strong>Reviewed Together</strong></span>
+    </div>
+  </div>
+  <div class="wrap" style="width:100%;">
+    <div class="hero-meta" style="margin-top:0;"><span>Scroll to explore the path forward</span></div>
+  </div>
+</header>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 01 THE GOAL -->
+<section id="goal">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">01</span> The Goal</div>
+    <h2 class="section-title reveal">A Clear Path<br>Forward</h2>
+    <p class="lead reveal">The goal of this roadmap is simple: to build a clear, honest path where your role, responsibility, leadership, and earning potential can grow as Daily Grind Media grows. This isn't a fixed ceiling or a rigid contract — it's a shared direction we move toward together.</p>
+    <p class="lead reveal">As you take on more, deliver stronger results, and help drive the business forward, your opportunity grows with it. The more impact you create, the more value you build — and the more room there is for that value to be recognized.</p>
+    <div class="statement reveal">
+      <p>Increased responsibility, stronger leadership, and business growth create <span class="accent">increased earning potential</span> — reviewed together as the business evolves.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 02 MY COMMITMENT -->
+<section id="commitment">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">02</span> My Commitment</div>
+    <h2 class="section-title reveal">This Goes<br>Both Ways</h2>
+    <p class="lead reveal">This roadmap isn't just about your growth — it's about my responsibility as the founder to keep building Daily Grind Media into a company worth growing inside. A path only means something if there's a real business behind it, and that part is on me.</p>
+    <p class="lead reveal">So here's what I'm committing to. As you keep raising your game, I'll keep doing the work to make sure there's more room, more opportunity, and a bigger vision for both of us to build toward.</p>
+
+    <div class="pledge">
+      <div class="pledge-item reveal">
+        <div class="pledge-ico"><svg viewBox="0 0 24 24"><path d="M16 8a5 5 0 00-5-5 5 5 0 00-5 5c0 4 5 9 5 9M13 21h8M17 17v8" transform="translate(0 -2)"/><circle cx="12" cy="8" r="2"/></svg></div>
+        <p><strong>Continue bringing in new clients.</strong> More work coming in is what makes everything else possible.</p>
+      </div>
+      <div class="pledge-item reveal">
+        <div class="pledge-ico"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="5"/></svg></div>
+        <p><strong>Continue improving our systems.</strong> Better systems make great work repeatable and your job easier.</p>
+      </div>
+      <div class="pledge-item reveal">
+        <div class="pledge-ico"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <p><strong>Invest back into the business.</strong> Reinvesting in tools, people, and capacity so we can grow.</p>
+      </div>
+      <div class="pledge-item reveal">
+        <div class="pledge-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div>
+        <p><strong>Build a team around us.</strong> Surrounding you with a bench of talent so no one carries it alone.</p>
+      </div>
+      <div class="pledge-item reveal">
+        <div class="pledge-ico"><svg viewBox="0 0 24 24"><path d="M12 2c3 2 5 5 5 9a5 5 0 01-10 0c0-4 2-7 5-9z"/><path d="M8 14c-2 1-3 3-3 6 2 0 3-1 4-2"/></svg></div>
+        <p><strong>Create opportunities for leadership.</strong> Real roles to grow into as the company expands.</p>
+      </div>
+      <div class="pledge-item reveal">
+        <div class="pledge-ico"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18M9 21v-6h6v6"/></svg></div>
+        <p><strong>Build a company where great people build careers.</strong> Somewhere worth staying and growing for the long term.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal">
+      <p>“My responsibility is to keep building a business that creates bigger opportunities than either of us could create alone.”</p>
+      <span class="attrib">— Lo, Founder · Daily Grind Media</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 03 THE ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">03</span> The Roadmap</div>
+    <h2 class="section-title reveal">Five Levels<br>Of Growth</h2>
+    <p class="lead reveal">Each level represents a natural evolution — more ownership, more leadership, and more strategic impact. You don't skip steps; you build on them. This is the progression from executing great work to helping lead a key sector of the business.</p>
+
+    <div class="roadmap-track">
+      <!-- LEVEL 1 -->
+      <div class="level reveal">
+        <div class="level-badge">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 8h18"/><path d="M7 4l1 4M11 4l1 4M15 4l1 4"/></svg>
+        </div>
+        <div class="level-num">Level 1</div>
+        <h3>Creative Lead</h3>
+        <span class="level-focus">Focus: Execution</span>
+        <ul>
+          <li>Master DGM systems</li>
+          <li>Edit client projects</li>
+          <li>Learn SD Auto Style branding</li>
+          <li>Build SOPs</li>
+          <li>Support production</li>
+          <li>Assist with freelancer research</li>
+        </ul>
+        <div class="level-tag">Foundation Building</div>
+      </div>
+      <!-- LEVEL 2 -->
+      <div class="level reveal">
+        <div class="level-badge">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="level-num">Level 2</div>
+        <h3>Lead Editor</h3>
+        <span class="level-focus">Focus: Ownership</span>
+        <ul>
+          <li>Own SD Auto creatives</li>
+          <li>Quality control edits</li>
+          <li>Improve workflows</li>
+          <li>Help build freelancer database</li>
+          <li>Manage project timelines</li>
+        </ul>
+        <div class="level-tag">Taking Ownership</div>
+      </div>
+      <!-- LEVEL 3 -->
+      <div class="level reveal">
+        <div class="level-badge">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg>
+        </div>
+        <div class="level-num">Level 3</div>
+        <h3>Senior Creative</h3>
+        <span class="level-focus">Focus: Leadership</span>
+        <ul>
+          <li>Oversee other editors</li>
+          <li>Ensure brand consistency</li>
+          <li>Coordinate shoots</li>
+          <li>Own client delivery</li>
+          <li>Optimize production processes</li>
+        </ul>
+        <div class="level-tag">Leading The Creative Process</div>
+      </div>
+      <!-- LEVEL 4 -->
+      <div class="level reveal">
+        <div class="level-badge">
+          <svg viewBox="0 0 24 24"><path d="M3 7l4 4 5-6 5 6 4-4v11H3z"/><path d="M3 20h18"/></svg>
+        </div>
+        <div class="level-num">Level 4</div>
+        <h3>Creative Director</h3>
+        <span class="level-focus">Focus: Management</span>
+        <ul>
+          <li>Run creative department</li>
+          <li>Set creative standards</li>
+          <li>Manage freelancers</li>
+          <li>Plan and schedule projects</li>
+          <li>Support capacity & resource planning</li>
+          <li>Deliver results at scale</li>
+        </ul>
+        <div class="level-tag">Managing The Department</div>
+      </div>
+      <!-- LEVEL 5 -->
+      <div class="level reveal">
+        <div class="level-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2c3 2 5 5 5 9a5 5 0 01-10 0c0-4 2-7 5-9z"/><path d="M8 14c-2 1-3 3-3 6 2 0 3-1 4-2M16 14c2 1 3 3 3 6-2 0-3-1-4-2"/></svg>
+        </div>
+        <div class="level-num">Level 5</div>
+        <h3>Creative Ops Lead</h3>
+        <span class="level-focus">Focus: Strategy</span>
+        <ul>
+          <li>Oversee creative & operations</li>
+          <li>Drive systems and strategy</li>
+          <li>Forecast and plan growth</li>
+          <li>Build and lead team</li>
+          <li>Play a key role in bigger business decisions</li>
+        </ul>
+        <div class="level-tag">Leading A Key Sector Of DGM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 04 HOW GROWTH HAPPENS -->
+<section id="how-growth">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">04</span> How Growth Happens</div>
+    <h2 class="section-title reveal">The Engine<br>Behind It All</h2>
+    <p class="lead reveal">Growth here isn't about waiting for a title. It's a chain reaction. Each stage naturally creates the next — skill builds value, value earns responsibility, responsibility drives the business forward, and business growth opens up leadership and greater opportunity. This is the flywheel that makes everything else possible.</p>
+
+    <div class="flow">
+      <div class="flow-node reveal">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div>
+          <div class="fn-step">Stage 01</div>
+          <h3>Develop Skills</h3>
+          <p>Sharpen the craft, master the systems, and raise your ceiling.</p>
+        </div>
+      </div>
+      <div class="flow-arrow reveal"><svg viewBox="0 0 20 26"><path class="fa-line" d="M10 2v18"/><path d="M4 15l6 6 6-6"/></svg></div>
+
+      <div class="flow-node reveal">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <div>
+          <div class="fn-step">Stage 02</div>
+          <h3>Create More Value</h3>
+          <p>Better work, stronger delivery, and results clients feel.</p>
+        </div>
+      </div>
+      <div class="flow-arrow reveal"><svg viewBox="0 0 20 26"><path class="fa-line" d="M10 2v18"/><path d="M4 15l6 6 6-6"/></svg></div>
+
+      <div class="flow-node reveal">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        <div>
+          <div class="fn-step">Stage 03</div>
+          <h3>Take On More Responsibility</h3>
+          <p>Own outcomes, systems, and eventually people.</p>
+        </div>
+      </div>
+      <div class="flow-arrow reveal"><svg viewBox="0 0 20 26"><path class="fa-line" d="M10 2v18"/><path d="M4 15l6 6 6-6"/></svg></div>
+
+      <div class="flow-node reveal">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
+        <div>
+          <div class="fn-step">Stage 04</div>
+          <h3>Help Grow The Business</h3>
+          <p>More capacity, more clients, more predictable revenue.</p>
+        </div>
+      </div>
+      <div class="flow-arrow reveal"><svg viewBox="0 0 20 26"><path class="fa-line" d="M10 2v18"/><path d="M4 15l6 6 6-6"/></svg></div>
+
+      <div class="flow-node reveal">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M12 2c3 2 5 5 5 9a5 5 0 01-10 0c0-4 2-7 5-9z"/><path d="M8 14c-2 1-3 3-3 6 2 0 3-1 4-2M16 14c2 1 3 3 3 6-2 0-3-1-4-2"/></svg></div>
+        <div>
+          <div class="fn-step">Stage 05</div>
+          <h3>Unlock Leadership Opportunities</h3>
+          <p>Lead departments, mentor a team, shape direction.</p>
+        </div>
+      </div>
+      <div class="flow-arrow reveal"><svg viewBox="0 0 20 26"><path class="fa-line" d="M10 2v18"/><path d="M4 15l6 6 6-6"/></svg></div>
+
+      <div class="flow-node terminal reveal">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2c0-1.1 1.1-2 2.5-2s2.5.9 2.5 2-1.1 1.6-2.5 1.8-2.5.7-2.5 1.8 1.1 2 2.5 2 2.5-.9 2.5-2"/></svg></div>
+        <div>
+          <div class="fn-step">The Result</div>
+          <h3>Increased Compensation Potential</h3>
+          <p>As the value you create compounds, so does what's possible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 05 EXAMPLE GROWTH MILESTONES -->
+<section id="milestones">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">05</span> Example Growth Milestones</div>
+    <h2 class="section-title reveal">How Impact<br>Unlocks More</h2>
+    <p class="lead reveal">These are illustrative examples — not fixed steps — of how taking on more can open the door to bigger opportunities. Each phase builds naturally on the last, showing the kind of progression that's possible as you grow into the role.</p>
+
+    <div class="mstone">
+      <div class="ms-item reveal">
+        <div class="ms-card">
+          <div class="ms-head"><span class="ms-phase">Foundation</span><span class="ms-badge">Phase 01</span></div>
+          <div class="ms-ex">Examples</div>
+          <ul class="ms-list">
+            <li>Learn DGM systems</li>
+            <li>Master editing workflows</li>
+            <li>Understand brand standards</li>
+            <li>Deliver consistently</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ms-item reveal">
+        <div class="ms-card">
+          <div class="ms-head"><span class="ms-phase">Ownership</span><span class="ms-badge">Phase 02</span></div>
+          <div class="ms-ex">Examples</div>
+          <ul class="ms-list">
+            <li>Own client creative</li>
+            <li>Improve workflows</li>
+            <li>Build SOPs</li>
+            <li>Manage timelines</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ms-item reveal">
+        <div class="ms-card">
+          <div class="ms-head"><span class="ms-phase">Scale</span><span class="ms-badge">Phase 03</span></div>
+          <div class="ms-ex">Examples</div>
+          <ul class="ms-list">
+            <li>Manage freelancers</li>
+            <li>Quality control</li>
+            <li>Coordinate production</li>
+            <li>Increase delivery capacity</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ms-item reveal">
+        <div class="ms-card">
+          <div class="ms-head"><span class="ms-phase">Leadership</span><span class="ms-badge">Phase 04</span></div>
+          <div class="ms-ex">Examples</div>
+          <ul class="ms-list">
+            <li>Lead a department</li>
+            <li>Mentor creatives</li>
+            <li>Improve systems</li>
+            <li>Help shape business decisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 06 HOW DGM EVOLVES -->
+<section id="evolve">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">06</span> Business Growth Timeline</div>
+    <h2 class="section-title reveal">How DGM<br>Evolves</h2>
+    <p class="lead reveal">This isn't a pay scale — it's a picture of the company. Revenue growth doesn't automatically mean a raise; what it does is create more capacity, more team members, better systems, new leadership opportunities, greater responsibility, and — through all of that — increased compensation potential. The bigger the business becomes, the more room there is for everyone building it. Each tier below is an example of what that evolution can look like.</p>
+
+    <div class="evolve">
+      <div class="stage current reveal">
+        <div class="stage-mark">
+          <div class="stage-tier">Current</div>
+          <div class="stage-unlock"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg> Starting Point</div>
+        </div>
+        <div class="stage-body">
+          <h3>Building The Base</h3>
+          <div class="stage-tags"><span>Building foundations</span><span>Learning systems</span></div>
+        </div>
+      </div>
+      <div class="stage reveal">
+        <div class="stage-mark">
+          <div class="stage-tier">$15K<span class="plus">+</span></div>
+          <div class="stage-unlock"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Unlocked</div>
+        </div>
+        <div class="stage-body">
+          <h3>Consistent Operations</h3>
+          <div class="stage-tags"><span>Consistent operations</span><span>More predictable revenue</span><span>Improved production</span></div>
+        </div>
+      </div>
+      <div class="stage reveal">
+        <div class="stage-mark">
+          <div class="stage-tier">$25K<span class="plus">+</span></div>
+          <div class="stage-unlock"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Unlocked</div>
+        </div>
+        <div class="stage-body">
+          <h3>Expanding Capacity</h3>
+          <div class="stage-tags"><span>Additional freelancers</span><span>More client capacity</span><span>Department ownership begins</span></div>
+        </div>
+      </div>
+      <div class="stage reveal">
+        <div class="stage-mark">
+          <div class="stage-tier">$40K<span class="plus">+</span></div>
+          <div class="stage-unlock"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Unlocked</div>
+        </div>
+        <div class="stage-body">
+          <h3>A Real Department</h3>
+          <div class="stage-tags"><span>Creative department</span><span>Project management</span><span>Higher-value clients</span></div>
+        </div>
+      </div>
+      <div class="stage reveal">
+        <div class="stage-mark">
+          <div class="stage-tier">$60K<span class="plus">+</span></div>
+          <div class="stage-unlock"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Unlocked</div>
+        </div>
+        <div class="stage-body">
+          <h3>Multiple Departments</h3>
+          <div class="stage-tags"><span>Multiple departments</span><span>Leadership expansion</span><span>Dedicated systems</span></div>
+        </div>
+      </div>
+      <div class="stage peak reveal">
+        <div class="stage-mark">
+          <div class="stage-tier">$100K<span class="plus">+</span></div>
+          <div class="stage-unlock"><svg viewBox="0 0 24 24"><path d="M12 2c3 2 5 5 5 9a5 5 0 01-10 0c0-4 2-7 5-9z"/></svg> Full Agency</div>
+        </div>
+        <div class="stage-body">
+          <h3>Full Agency</h3>
+          <div class="stage-tags"><span>Full agency</span><span>Leadership team</span><span>Scalable operations</span><span>Multiple revenue channels</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer reveal">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <p>The revenue stages shown throughout this roadmap are <strong>examples used to illustrate how Daily Grind Media may evolve over time.</strong> They are not guarantees, compensation commitments, or automatic promotion triggers. Every milestone will be reviewed together based on business performance, profitability, individual growth, and the responsibilities being taken on.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 07 RESPONSIBILITY vs OPPORTUNITY -->
+<section id="value-curve">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">07</span> Responsibility vs Opportunity</div>
+    <h2 class="section-title reveal">The Value<br>Relationship</h2>
+    <p class="lead reveal">The pattern is simple and consistent: as career progression and business value climb, opportunity climbs alongside it. This chart isn't about numbers — it's about direction. The more value you create, the more the two curves rise together.</p>
+
+    <div class="chart-wrap reveal">
+      <div class="chart-legend">
+        <span><i class="lg-swatch lg-value"></i> Business Value Created</span>
+        <span><i class="lg-swatch lg-comp dash"></i> Compensation Potential</span>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 800 380" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Upward curve showing business value created and compensation potential rising with career progression">
+        <defs>
+          <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#BB725A" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="#BB725A" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- grid lines -->
+        <line class="chart-grid-line" x1="70" y1="40" x2="70" y2="320"/>
+        <line class="chart-grid-line" x1="70" y1="320" x2="770" y2="320"/>
+        <line class="chart-grid-line" x1="70" y1="250" x2="770" y2="250" opacity="0.5"/>
+        <line class="chart-grid-line" x1="70" y1="180" x2="770" y2="180" opacity="0.5"/>
+        <line class="chart-grid-line" x1="70" y1="110" x2="770" y2="110" opacity="0.5"/>
+        <!-- axis labels -->
+        <text class="chart-axis-y" x="30" y="185" transform="rotate(-90 30 185)" text-anchor="middle">Business Value Created</text>
+        <text class="chart-axis-x" x="420" y="360" text-anchor="middle">Career Progression →</text>
+        <!-- area under value curve -->
+        <path class="chart-area" d="M70,300 C200,285 300,235 420,175 C540,115 640,70 770,48 L770,320 L70,320 Z"/>
+        <!-- compensation potential (lower, dashed, follows) -->
+        <path class="chart-path-comp draw-anim delay" d="M70,312 C200,302 300,262 420,210 C540,158 640,118 770,92"/>
+        <!-- value curve (upper, solid) -->
+        <path class="chart-path-value draw-anim" d="M70,300 C200,285 300,235 420,175 C540,115 640,70 770,48"/>
+        <!-- markers on value curve -->
+        <circle class="chart-mk" cx="70" cy="300" r="6"/>
+        <circle class="chart-mk" cx="245" cy="255" r="6"/>
+        <circle class="chart-mk" cx="420" cy="175" r="6"/>
+        <circle class="chart-mk" cx="595" cy="103" r="6"/>
+        <circle class="chart-mk" cx="770" cy="48" r="6"/>
+        <!-- marker labels -->
+        <text class="chart-mk-label" x="70"  y="290" text-anchor="start">Execution</text>
+        <text class="chart-mk-label" x="245" y="245" text-anchor="middle">Ownership</text>
+        <text class="chart-mk-label" x="420" y="165" text-anchor="middle">Leadership</text>
+        <text class="chart-mk-label" x="595" y="93"  text-anchor="middle">Management</text>
+        <text class="chart-mk-label" x="770" y="38"  text-anchor="end">Strategy</text>
+      </svg>
+      <p class="chart-caption serif">As the value you create rises, the opportunity rises with it. That's the whole idea.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 08 GROWING RESPONSIBILITY -->
+<section id="responsibility">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">08</span> Growing Responsibility</div>
+    <h2 class="section-title reveal">Execute · Own · Lead<br>Manage · Strategize</h2>
+    <p class="lead reveal">Every level is defined by a shift in how you operate. As you grow, the nature of your work evolves — from perfecting the craft, to owning systems, to guiding people, to shaping the direction of the business itself.</p>
+
+    <div class="progression">
+      <div class="prog-step reveal">
+        <h4>Execute</h4>
+        <p>Focus on craft, delivery, and quality.</p>
+      </div>
+      <div class="prog-step reveal">
+        <h4>Own</h4>
+        <p>Take full responsibility for work and systems.</p>
+      </div>
+      <div class="prog-step reveal">
+        <h4>Lead</h4>
+        <p>Guide people, processes, and quality.</p>
+      </div>
+      <div class="prog-step reveal">
+        <h4>Manage</h4>
+        <p>Oversee projects, people, and workflows.</p>
+      </div>
+      <div class="prog-step reveal">
+        <h4>Strategize</h4>
+        <p>Help drive the vision and growth of the business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 09 LEADERSHIP SCORECARD -->
+<section id="scorecard">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">09</span> Leadership Scorecard</div>
+    <h2 class="section-title reveal">The Signals<br>Of Growth</h2>
+    <p class="lead reveal">These are the areas that show leadership is developing and value is being created. Think of them as the dashboard we watch together — not a grading system, but a shared view of momentum. The bars below are illustrative of the kind of trajectory we're building toward.</p>
+
+    <div class="kpi-grid">
+      <div class="kpi reveal" style="--fill:88%">
+        <div class="kpi-top">
+          <div class="kpi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 13c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
+          <h3>Client Satisfaction</h3>
+        </div>
+        <p>Clients who feel taken care of and keep coming back.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Focus Area</span><strong>Trending Up</strong></div>
+      </div>
+
+      <div class="kpi reveal" style="--fill:82%">
+        <div class="kpi-top">
+          <div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></div>
+          <h3>Creative Quality</h3>
+        </div>
+        <p>Work that meets the DGM standard, every single time.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Focus Area</span><strong>Trending Up</strong></div>
+      </div>
+
+      <div class="kpi reveal" style="--fill:76%">
+        <div class="kpi-top">
+          <div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h11"/></svg></div>
+          <h3>Project Ownership</h3>
+        </div>
+        <p>Taking full responsibility for outcomes end to end.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Focus Area</span><strong>Building</strong></div>
+      </div>
+
+      <div class="kpi reveal" style="--fill:71%">
+        <div class="kpi-top">
+          <div class="kpi-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
+          <h3>Systems Built</h3>
+        </div>
+        <p>SOPs and workflows that make the whole team faster.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Focus Area</span><strong>Building</strong></div>
+      </div>
+
+      <div class="kpi reveal" style="--fill:64%">
+        <div class="kpi-top">
+          <div class="kpi-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div>
+          <h3>Team Leadership</h3>
+        </div>
+        <p>Guiding freelancers and mentoring other creatives.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Focus Area</span><strong>Emerging</strong></div>
+      </div>
+
+      <div class="kpi reveal" style="--fill:79%">
+        <div class="kpi-top">
+          <div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
+          <h3>Business Growth Contribution</h3>
+        </div>
+        <p>Directly helping DGM take on more and deliver at scale.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Focus Area</span><strong>Trending Up</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 10 HOW COMPENSATION GROWS -->
+<section id="compensation">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">10</span> How Compensation Grows</div>
+    <h2 class="section-title reveal">More Impact<br>More Upside</h2>
+    <p class="lead reveal">As your role and results grow, so does your earning opportunity. Rather than a single fixed number, compensation potential grows across several dimensions — tied to responsibility, performance, business milestones, and long-term leadership. These grow together, milestone by milestone.</p>
+
+    <div class="comp-grid">
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        <h3>Base Growth</h3>
+        <p>As responsibility increases and you move to the next level, base compensation can increase alongside it.</p>
+        <div class="comp-viz"><div class="viz-bars"><i style="--h:32%"></i><i style="--h:52%"></i><i style="--h:74%"></i><i style="--h:96%"></i></div></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Performance Bonus</h3>
+        <p>Additional bonus opportunities tied to company and team performance as goals are hit.</p>
+        <div class="comp-viz"><div class="viz-target"><svg viewBox="0 0 60 60"><circle class="tr-ring" cx="30" cy="30" r="24"/><circle class="tr-prog" cx="30" cy="30" r="24"/><circle class="tr-dot" cx="30" cy="6" r="3.5"/></svg></div></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2c0-1.1 1.1-2 2.5-2s2.5.9 2.5 2-1.1 1.6-2.5 1.8-2.5.7-2.5 1.8 1.1 2 2.5 2 2.5-.9 2.5-2"/></svg></div>
+        <h3>Revenue Milestones</h3>
+        <p>Larger business milestones reached together can unlock added incentives over time.</p>
+        <div class="comp-viz"><div class="viz-stair"><i style="--h:20%"></i><i style="--h:38%"></i><i style="--h:56%"></i><i style="--h:76%"></i><i style="--h:98%"></i></div></div>
+      </div>
+      <div class="comp-card reveal">
+        <div class="comp-icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
+        <h3>Long-Term Upside</h3>
+        <p>As DGM grows, larger opportunities and leadership upside become possible down the road.</p>
+        <div class="comp-viz"><div class="viz-org"><svg viewBox="0 0 120 60"><line x1="60" y1="14" x2="28" y2="44"/><line x1="60" y1="14" x2="60" y2="44"/><line x1="60" y1="14" x2="92" y2="44"/><line x1="92" y1="44" x2="108" y2="44"/><circle cx="60" cy="14" r="7"/><circle cx="28" cy="46" r="6"/><circle cx="60" cy="46" r="6"/><circle cx="92" cy="46" r="6"/></svg></div></div>
+      </div>
+    </div>
+
+    <div class="commitment reveal">
+      <span class="c-star">★</span>
+      <div>
+        <span class="c-label">Our Commitment</span>
+        <p>We'll review, adjust, and grow this plan together as the business evolves. The goal is long-term growth potential for both of us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 11 SUCCESS METRICS -->
+<section id="metrics">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">11</span> Success Metrics</div>
+    <h2 class="section-title reveal">What Winning<br>Looks Like</h2>
+    <p class="lead reveal">Growth is earned through consistent results. These are the signals that show the plan is working — the measures we'll look at together as your role and impact expand.</p>
+
+    <div class="metrics-grid">
+      <div class="metric reveal">
+        <div class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h4>Consistent Client Delivery</h4>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></div>
+        <h4>High-Quality Standards</h4>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h4>Projects On Time</h4>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div>
+        <h4>Team Development & Leadership</h4>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
+        <h4>Business Growth & Revenue</h4>
+      </div>
+      <div class="metric reveal">
+        <div class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
+        <h4>Client Satisfaction & Retention</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 12 NEXT STEPS -->
+<section id="next-steps">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">12</span> Next Steps</div>
+    <h2 class="section-title reveal">The Path<br>Ahead</h2>
+    <p class="lead reveal">This roadmap starts with the fundamentals and builds toward shared success. Here's how we move forward from here.</p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="s-n">1</span>
+        <h3>Build The Foundation</h3>
+        <p>Continue building systems and strong foundations.</p>
+      </div>
+      <div class="step reveal">
+        <span class="s-n">2</span>
+        <h3>Take On More</h3>
+        <p>Take on more responsibility and leadership.</p>
+      </div>
+      <div class="step reveal">
+        <span class="s-n">3</span>
+        <h3>Grow Together</h3>
+        <p>Grow the business together.</p>
+      </div>
+      <div class="step reveal">
+        <span class="s-n">4</span>
+        <h3>Win Together</h3>
+        <p>Increase impact, increase income, win together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 13 WHAT I'M LOOKING FOR -->
+<section id="looking-for">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">13</span> What I'm Looking For</div>
+    <h2 class="section-title reveal">Earned,<br>Not Waited For</h2>
+    <p class="lead reveal">Promotions here aren't about how long you've been around. They're earned by becoming someone the business can genuinely rely on — someone who makes the whole thing better by being part of it. Here's what that looks like in practice.</p>
+
+    <div class="looking-grid">
+      <div class="look-item reveal">
+        <div class="l-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .5-4.5 4 1.5 6-6-3.5-6 3.5 1.5-6L3 8.5 9 8z"/></svg></div>
+        <h4>Take Ownership</h4>
+        <p>Owning outcomes without being asked, and following through to the end.</p>
+      </div>
+      <div class="look-item reveal">
+        <div class="l-ico"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0012 2z"/></svg></div>
+        <h4>Solve Proactively</h4>
+        <p>Spotting problems early and fixing them before they land on anyone's desk.</p>
+      </div>
+      <div class="look-item reveal">
+        <div class="l-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
+        <h4>Improve Systems</h4>
+        <p>Leaving every workflow a little sharper than you found it.</p>
+      </div>
+      <div class="look-item reveal">
+        <div class="l-ico"><svg viewBox="0 0 24 24"><path d="M2 12l10-9 10 9M5 10v10h14V10M9 20v-6h6v6"/></svg></div>
+        <h4>Think Like An Owner</h4>
+        <p>Making decisions with the whole business in mind, not just the task.</p>
+      </div>
+      <div class="look-item reveal">
+        <div class="l-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div>
+        <h4>Help Teammates Win</h4>
+        <p>Lifting the people around you so the whole team levels up together.</p>
+      </div>
+      <div class="look-item reveal">
+        <div class="l-ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg></div>
+        <h4>Raise Quality Constantly</h4>
+        <p>Never settling — always pushing the standard of the work a notch higher.</p>
+      </div>
+    </div>
+
+    <p class="look-close serif reveal">The goal isn't perfection — it's continuous growth.</p>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 14 WHAT SUCCESS LOOKS LIKE IN 12 MONTHS -->
+<section id="vision">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">14</span> The 12-Month Vision</div>
+    <h2 class="section-title reveal">What We're<br>Building</h2>
+    <p class="lead vision-intro reveal">Picture Daily Grind Media one year from now if we execute this vision together. This isn't about a paycheck — it's about the company we're building and the role you play in it. Here's what that future could realistically look like.</p>
+
+    <div class="vision-grid">
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18M9 21v-6h6v6"/></svg></div>
+        <div class="vlabel">The Company</div>
+        <h3>Daily Grind Media</h3>
+        <ul>
+          <li>Multiple premium monthly retainers</li>
+          <li>Predictable recurring revenue</li>
+          <li>Repeatable systems</li>
+          <li>Strong internal operations</li>
+          <li>Consistent lead generation</li>
+        </ul>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M12 2v2M12 12v1"/></svg></div>
+        <div class="vlabel">Your Role</div>
+        <h3>Walter</h3>
+        <ul>
+          <li>Managing creative operations</li>
+          <li>Leading freelancers</li>
+          <li>Quality controlling projects</li>
+          <li>Overseeing client delivery</li>
+          <li>Helping improve internal systems</li>
+          <li>Playing a key leadership role</li>
+        </ul>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg></div>
+        <div class="vlabel">The Partnership</div>
+        <h3>My Role</h3>
+        <ul>
+          <li>Focused primarily on sales</li>
+          <li>Partnerships</li>
+          <li>Business development</li>
+          <li>Marketing</li>
+          <li>Building new offers</li>
+          <li>Growing the company</li>
+        </ul>
+      </div>
+
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="8" r="2.5"/><circle cx="12" cy="15" r="2.5"/><path d="M2 18c0-2.2 2-4 5-4M22 18c0-2.2-2-4-5-4M7 21c0-2 2.2-3.5 5-3.5s5 1.5 5 3.5"/></svg></div>
+        <div class="vlabel">The Team</div>
+        <h3>The Team</h3>
+        <ul>
+          <li>Bench of vetted freelancers</li>
+          <li>Reliable production pipeline</li>
+          <li>Intern program operating</li>
+          <li>Editors supporting multiple clients</li>
+          <li>SOP-driven production</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="result-block reveal">
+      <div class="result-label">The Result</div>
+      <div class="result-chain">
+        <span class="rc-item">Business Grows</span>
+        <span class="rc-arrow">→</span>
+        <span class="rc-item">Team Grows</span>
+        <span class="rc-arrow">→</span>
+        <span class="rc-item">Leadership Grows</span>
+        <span class="rc-arrow">→</span>
+        <span class="rc-item">Opportunity Grows</span>
+        <span class="rc-arrow">→</span>
+        <span class="rc-item final">Everyone Wins Together</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 15 WHY THIS MATTERS -->
+<section id="why-matters">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">15</span> Why This Matters</div>
+    <h2 class="section-title reveal">Bigger Than<br>A Job</h2>
+    <p class="lead reveal">Strip away the levels and the milestones, and here's what this is really about. This isn't just a job on either side — it's a chance to build something worth investing ourselves in.</p>
+
+    <div class="why-block reveal">
+      <div class="why-list">
+        <div class="why-row"><span class="wr-n">01</span><p>We're building something that gives us freedom.</p></div>
+        <div class="why-row"><span class="wr-n">02</span><p>We're building careers instead of jobs.</p></div>
+        <div class="why-row"><span class="wr-n">03</span><p>We're creating opportunities for future team members.</p></div>
+        <div class="why-row"><span class="wr-n">04</span><p>We're building a company we're proud of.</p></div>
+        <div class="why-row"><span class="wr-n">05</span><p>We're creating something that lasts.</p></div>
+      </div>
+    </div>
+
+    <div class="why-close reveal">
+      <p>“If we keep improving ourselves, serving our clients well, and building great systems, the opportunities available to all of us will keep growing.”</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="lockup">
+      <div class="lockup-mark"><span></span><span></span><span></span><span></span></div>
+      <div class="lockup-name">Daily Grind Media</div>
+    </div>
+    <div class="footer-mark">One Team. One Vision.</div>
+    <div class="footer-tag">Stay On That Daily Grind.</div>
+    <div class="footer-meta">Growth Roadmap · Walter × Lo · Daily Grind Media</div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>
