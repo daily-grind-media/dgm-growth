@@ -323,6 +323,150 @@ footer .lockup{justify-content:center;}
 .mini-flow{display:flex;justify-content:center;padding:6px 0;}
 .mini-flow svg{width:16px;height:22px;stroke:var(--copper-dark);fill:none;stroke-width:1.6;}
 
+/* ============================================================
+   PART 2 — 90-DAY & 6-MONTH EXECUTION STRATEGY
+   ============================================================ */
+
+/* Act break / part-2 hero */
+.act-break{background:linear-gradient(180deg,var(--black),#0c0a09 55%,var(--black));border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.act-break::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(187,114,90,0.12),transparent 60%);pointer-events:none;}
+.p2-hero{min-height:88svh;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;padding:clamp(70px,12vw,140px) 0;}
+.p2-part{font-family:'Barlow Condensed',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:0.4em;font-size:clamp(0.64rem,1.4vw,0.78rem);color:var(--copper);margin-bottom:clamp(22px,3vw,32px);display:flex;align-items:center;gap:14px;}
+.p2-part::before{content:"";width:44px;height:1px;background:var(--copper);}
+.p2-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.9rem,11vw,7.5rem);text-transform:uppercase;color:var(--white);line-height:0.88;letter-spacing:0.02em;}
+.p2-title .row2{color:var(--copper);display:block;}
+.p2-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;color:var(--copper-light);font-size:clamp(1.25rem,3.4vw,2.1rem);margin-top:clamp(20px,3vw,30px);}
+.p2-support{max-width:60ch;margin-top:clamp(24px,3.5vw,36px);}
+.p2-support p{font-size:clamp(1rem,2vw,1.15rem);color:#cfccc6;}
+.p2-cascade{margin-top:clamp(30px,4vw,46px);display:flex;flex-wrap:wrap;gap:clamp(10px,1.6vw,16px);align-items:center;}
+.p2-cascade span{font-family:'Barlow Condensed',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;font-size:clamp(0.78rem,1.8vw,0.98rem);color:var(--white);}
+.p2-cascade .cx{color:var(--copper-dark);font-size:0.9rem;}
+.p2-cascade .last{color:var(--copper);}
+
+/* Shared mission — three interconnected columns */
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(32px,5vw,52px);position:relative;border:1px solid var(--border);background:var(--card);}
+.mission-col{padding:clamp(26px,3.4vw,40px);position:relative;}
+.mission-col:not(:last-child){border-right:1px solid var(--border);}
+.mission-col::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--copper),var(--copper-dark));opacity:0;transition:opacity .5s ease;}
+.mission-col:hover::before{opacity:1;}
+.mission-ico{width:50px;height:50px;border-radius:13px;background:radial-gradient(circle at 50% 30%,rgba(187,114,90,0.18),rgba(8,8,8,0.4));border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.mission-ico svg{width:25px;height:25px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.mission-col .m-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--white);text-transform:uppercase;line-height:0.9;}
+.mission-col .m-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.26em;font-size:0.62rem;color:var(--copper);margin:8px 0 18px;}
+.mission-col ul{list-style:none;}
+.mission-col li{font-size:0.92rem;color:#bdbab4;padding:8px 0 8px 16px;position:relative;border-top:1px solid var(--border);}
+.mission-col li:first-child{border-top:none;}
+.mission-col li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:1px;background:var(--copper);}
+.mission-connector{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(22px,3vw,30px);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.24em;font-size:clamp(0.72rem,1.6vw,0.85rem);color:var(--copper);}
+.mission-connector .mc-line{height:1px;width:clamp(30px,8vw,80px);background:linear-gradient(90deg,transparent,var(--copper),transparent);}
+.mission-connector .serif{font-size:clamp(1.1rem,2.6vw,1.5rem);letter-spacing:0;text-transform:none;color:var(--copper-light);}
+
+/* Initiatives (executive cards) */
+.init-grid{display:grid;gap:clamp(16px,2.4vw,24px);grid-template-columns:repeat(auto-fit,minmax(330px,1fr));margin-top:clamp(32px,5vw,52px);}
+.init{background:var(--card);border:1px solid var(--border);padding:clamp(28px,3.4vw,40px);position:relative;overflow:hidden;transition:border-color .5s ease,transform .5s ease;display:flex;flex-direction:column;}
+.init:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.init::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--copper),var(--copper-dark));}
+.init-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;}
+.init-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);color:var(--copper-dark);line-height:0.75;}
+.init-n small{display:block;font-family:'Barlow Condensed',sans-serif;font-size:0.54rem;letter-spacing:0.3em;color:var(--muted);margin-bottom:5px;text-transform:uppercase;}
+.init-ico{width:44px;height:44px;border-radius:11px;background:var(--black);border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;}
+.init-ico svg{width:22px;height:22px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.init h3{font-size:clamp(1.6rem,3.2vw,2.1rem);color:var(--white);text-transform:uppercase;line-height:0.96;margin-bottom:16px;}
+.init-block{margin-bottom:18px;}
+.init-block .lbl{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.24em;font-size:0.6rem;color:var(--copper);display:block;margin-bottom:8px;}
+.init-mission{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--copper-light);font-size:1.12rem;line-height:1.4;}
+.init-why{font-size:0.94rem;color:#c5c2bc;}
+.init ul{list-style:none;}
+.init li{font-size:0.9rem;color:#bdbab4;padding:6px 0 6px 16px;position:relative;}
+.init li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:1px;background:var(--copper);}
+.init-success{background:rgba(187,114,90,0.06);border-left:2px solid var(--copper-dark);padding:14px 16px;margin-bottom:20px;}
+.init-success p{font-size:0.92rem;color:#cfccc6;}
+.init-track{margin-top:auto;}
+.init-track-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px;}
+.init-track-top .t-lbl{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.2em;font-size:0.58rem;color:var(--muted);}
+.init-track-top .t-val{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.12em;font-size:0.62rem;color:var(--copper);}
+.init-bar{height:6px;background:var(--border);border-radius:4px;overflow:hidden;position:relative;}
+.init-bar span{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--copper-dark),var(--copper));border-radius:4px;transition:width 1.6s cubic-bezier(.2,.7,.2,1);}
+.init.in .init-bar span{width:var(--fill,60%);}
+.init-impact{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.init-impact svg{width:16px;height:16px;stroke:var(--copper);fill:none;stroke-width:1.8;flex-shrink:0;}
+.init-impact span{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:0.72rem;color:#bdbab4;}
+.init-impact strong{color:var(--copper);font-weight:500;}
+
+/* 6-month vision dashboard cards */
+.future-grid{display:grid;gap:clamp(14px,2vw,20px);grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:clamp(32px,5vw,52px);}
+.future{background:var(--card);border:1px solid var(--border);padding:clamp(26px,3.2vw,34px);position:relative;overflow:hidden;transition:border-color .5s ease,transform .5s ease;}
+.future:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.future-top{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+.future-ico{width:44px;height:44px;border-radius:11px;background:radial-gradient(circle at 50% 30%,rgba(187,114,90,0.16),rgba(8,8,8,0.4));border:1px solid var(--copper-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.future-ico svg{width:22px;height:22px;stroke:var(--copper);fill:none;stroke-width:1.6;}
+.future h3{font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--white);font-size:1.15rem;line-height:1;}
+.future .f-state{font-size:0.94rem;color:#c5c2bc;line-height:1.55;}
+.future .f-chip{display:inline-block;margin-top:16px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.56rem;color:var(--copper);border:1px solid var(--copper-dark);padding:4px 10px;}
+
+/* Shared business goals — 3 col strategy dashboard */
+.goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,20px);margin-top:clamp(32px,5vw,52px);}
+.goal-col{background:var(--card);border:1px solid var(--border);padding:clamp(26px,3.2vw,36px);position:relative;transition:border-color .5s ease,transform .5s ease;}
+.goal-col:hover{border-color:var(--copper-dark);transform:translateY(-3px);}
+.goal-col::before{content:"";position:absolute;top:0;left:0;width:40px;height:2px;background:var(--copper);}
+.goal-col .g-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--white);text-transform:uppercase;line-height:0.9;margin-bottom:6px;}
+.goal-col .g-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.22em;font-size:0.58rem;color:var(--copper);margin-bottom:18px;}
+.goal-col ul{list-style:none;}
+.goal-col li{font-size:0.9rem;color:#bdbab4;padding:8px 0 8px 16px;position:relative;border-top:1px solid var(--border);}
+.goal-col li:first-child{border-top:none;}
+.goal-col li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:1px;background:var(--copper);}
+.goals-tagline{text-align:center;margin-top:clamp(26px,3.5vw,38px);}
+.goals-tagline .serif{font-size:clamp(1.3rem,3vw,1.9rem);}
+.goals-tagline .sub{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.24em;font-size:0.66rem;color:var(--muted);margin-top:10px;}
+
+/* Leadership readiness KPI dashboard (reuses .kpi look) */
+.readiness-note{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.66rem;color:var(--muted);margin-top:20px;display:flex;align-items:center;gap:10px;}
+.readiness-note svg{width:14px;height:14px;stroke:var(--copper);fill:none;stroke-width:1.8;}
+
+/* Monthly review dashboard */
+.review-panel{margin-top:clamp(32px,5vw,52px);border:1px solid var(--border);background:var(--card);overflow:hidden;}
+.review-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:clamp(20px,2.8vw,28px) clamp(22px,3.2vw,34px);border-bottom:1px solid var(--border);background:linear-gradient(100deg,rgba(187,114,90,0.07),transparent 60%);}
+.review-header h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--white);text-transform:uppercase;letter-spacing:0.03em;}
+.review-header .rh-tag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.2em;font-size:0.6rem;color:var(--copper);border:1px solid var(--copper-dark);padding:5px 12px;}
+.metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);}
+.mtile{background:var(--card);padding:clamp(20px,2.6vw,26px);transition:background .4s ease;}
+.mtile:hover{background:#151110;}
+.mtile .mt-lbl{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.16em;font-size:0.58rem;color:var(--muted);margin-bottom:12px;}
+.mtile .mt-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);line-height:0.85;}
+.mtile .mt-val .u{color:var(--copper);font-size:0.65em;}
+.mtile .mt-trend{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:0.58rem;color:var(--copper);margin-top:8px;display:flex;align-items:center;gap:5px;}
+.mtile .mt-trend svg{width:11px;height:11px;stroke:var(--copper);fill:none;stroke-width:2;}
+.mtile.blank .mt-val{font-family:'Barlow Condensed',sans-serif;font-weight:400;font-size:0.92rem;color:var(--copper-dark);letter-spacing:0.06em;text-transform:uppercase;line-height:1.3;}
+.review-notes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-top:1px solid var(--border);}
+.review-note-col{background:var(--card);padding:clamp(22px,3vw,30px);}
+.review-note-col .rn-lbl{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.22em;font-size:0.62rem;color:var(--copper);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.review-note-col .rn-lbl svg{width:15px;height:15px;stroke:var(--copper);fill:none;stroke-width:1.7;}
+.review-note-col ul{list-style:none;}
+.review-note-col li{font-size:0.92rem;color:#bdbab4;padding:7px 0 7px 18px;position:relative;}
+.review-note-col li::before{content:"";position:absolute;left:0;top:13px;width:7px;height:1px;background:var(--copper);}
+.review-note-col.blank li{color:var(--muted);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1rem;}
+.review-note-col.blank li::before{background:var(--copper-dark);}
+
+/* Final year vision + closing */
+.year-lead{max-width:64ch;}
+.finale-roadmap{margin-top:clamp(32px,5vw,52px);border:1px solid var(--copper-dark);background:linear-gradient(120deg,rgba(187,114,90,0.09),transparent 65%);padding:clamp(30px,4.5vw,54px);}
+.finale-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.28em;font-size:0.68rem;color:var(--copper);text-align:center;margin-bottom:clamp(26px,3.5vw,36px);}
+.finale-chain{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(8px,1.4vw,16px);}
+.finale-chain .fc-item{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.2rem,3vw,2rem);color:var(--white);text-transform:uppercase;line-height:0.9;}
+.finale-chain .fc-item.final{color:var(--copper);}
+.finale-chain .fc-arrow{color:var(--copper-dark);font-size:clamp(1rem,2.4vw,1.5rem);}
+.founder-close{border-left:2px solid var(--copper);padding:clamp(30px,4.5vw,54px) clamp(26px,4vw,56px);background:linear-gradient(100deg,rgba(187,114,90,0.08),transparent 60%);margin-top:clamp(28px,4vw,44px);}
+.founder-close p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.5rem,4vw,2.5rem);line-height:1.34;color:var(--white);}
+.founder-close .accent{color:var(--copper-light);}
+.founder-close .attrib{font-family:'Barlow Condensed',sans-serif;font-style:normal;text-transform:uppercase;letter-spacing:0.24em;font-size:0.66rem;color:var(--copper);margin-top:22px;display:block;}
+
+@media(max-width:900px){
+  .mission-grid{grid-template-columns:1fr;}
+  .mission-col:not(:last-child){border-right:none;border-bottom:1px solid var(--border);}
+  .goals-grid{grid-template-columns:1fr;}
+  .review-notes{grid-template-columns:1fr;}
+}
+
 @media(max-width:760px){
   .prog-step::after{display:none;}
   .commitment{flex-direction:column;gap:14px;}
@@ -332,20 +476,26 @@ footer .lockup{justify-content:center;}
   .stage-unlock{justify-content:flex-start;}
   .result-chain{flex-direction:column;gap:6px;}
   .result-chain .rc-arrow{transform:rotate(90deg);}
+  .p2-cascade{flex-direction:column;align-items:flex-start;gap:6px;}
+  .finale-chain{flex-direction:column;gap:6px;}
+  .finale-chain .fc-arrow{transform:rotate(90deg);}
+  .mission-connector{flex-direction:column;gap:8px;}
+  .mission-connector .mc-line{width:60px;}
 }
 
 @media print{
   body{background:#fff;color:#000;}
   .grain,header.hero::after{display:none;}
   .reveal{opacity:1!important;transform:none!important;}
-  .level,.card,.comp-card,.metric,.step,.acc-item,.flow-node,.ms-card,.stage,.kpi,.vcard,.chart-wrap,.result-block,.pledge-item,.pull-quote,.look-item,.why-row,.why-close,.disclaimer{break-inside:avoid;}
+  .level,.card,.comp-card,.metric,.step,.acc-item,.flow-node,.ms-card,.stage,.kpi,.vcard,.chart-wrap,.result-block,.pledge-item,.pull-quote,.look-item,.why-row,.why-close,.disclaimer,.mission-col,.init,.future,.goal-col,.review-panel,.finale-roadmap,.founder-close,.mtile{break-inside:avoid;}
   section{padding:24px 0;}
-  header.hero{min-height:auto;}
-  .hero-title,h2.section-title,.level h3,.card h3,.flow-node h3,.ms-phase,.kpi h3,.vcard h3,.stage-tier{color:#111;}
-  p,.lead,.level li,.ms-list li,.vcard li{color:#333;}
+  header.hero,.p2-hero{min-height:auto;}
+  .hero-title,h2.section-title,.level h3,.card h3,.flow-node h3,.ms-phase,.kpi h3,.vcard h3,.stage-tier,.p2-title,.init h3,.m-name,.g-name{color:#111;}
+  p,.lead,.level li,.ms-list li,.vcard li,.mission-col li,.init li,.goal-col li{color:#333;}
   .divider{opacity:1;}
-  .reveal,.draw-anim,.kpi-bar span,.viz-bars i,.viz-stair i{animation:none!important;opacity:1!important;}
+  .reveal,.draw-anim,.kpi-bar span,.viz-bars i,.viz-stair i,.init-bar span{animation:none!important;opacity:1!important;}
   .draw-anim{stroke-dashoffset:0!important;}
+  .act-break{border:none;}
 }
 </style>
 </head>
@@ -1181,7 +1331,7 @@ footer .lockup{justify-content:center;}
 
 <div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
 
-<!-- FOOTER -->
+<!-- PART ONE FOOTER / CHAPTER CLOSE -->
 <footer>
   <div class="wrap">
     <div class="lockup">
@@ -1190,9 +1340,503 @@ footer .lockup{justify-content:center;}
     </div>
     <div class="footer-mark">One Team. One Vision.</div>
     <div class="footer-tag">Stay On That Daily Grind.</div>
-    <div class="footer-meta">Growth Roadmap · Walter × Lo · Daily Grind Media</div>
+    <div class="footer-meta">Growth Roadmap · Part One · Walter × Lo · Daily Grind Media</div>
   </div>
 </footer>
+
+<!-- ============================================================
+     PART TWO — 90-DAY & 6-MONTH EXECUTION STRATEGY
+     ============================================================ -->
+
+<div class="act-break">
+  <header class="p2-hero">
+    <div class="wrap">
+      <div class="p2-part reveal">Part Two · The Execution Strategy</div>
+      <h1 class="p2-title reveal">90-Day &amp; 6-Month<span class="row2">Execution Strategy</span></h1>
+      <p class="p2-subtitle reveal">Turning Vision Into Execution</p>
+      <div class="p2-support reveal">
+        <p>The Growth Roadmap established where we're going. This execution strategy outlines <strong>how we'll build Daily Grind Media together</strong> over the next six months — not a task list, but our operating strategy.</p>
+      </div>
+      <div class="p2-cascade reveal">
+        <span>Execute</span><span class="cx">&rarr;</span>
+        <span>Stronger Business</span><span class="cx">&rarr;</span>
+        <span>Better Systems</span><span class="cx">&rarr;</span>
+        <span>Leadership Grows</span><span class="cx">&rarr;</span>
+        <span class="last">Opportunities Expand</span>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 16 OUR SHARED MISSION -->
+<section id="shared-mission">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">16</span> Our Shared Mission</div>
+    <h2 class="section-title reveal">One Mission,<br>Three Roles</h2>
+    <p class="lead reveal">This isn't three separate goals running in parallel. It's one mission with three roles &mdash; each of us owning a different part of the same outcome. When each column succeeds, the whole thing moves forward together.</p>
+
+    <div class="mission-grid reveal">
+      <div class="mission-col">
+        <div class="mission-ico"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18M9 21v-6h6v6"/></svg></div>
+        <div class="m-name">Daily Grind Media</div>
+        <div class="m-label">The Mission</div>
+        <ul>
+          <li>Build a premium creative agency</li>
+          <li>Build systems</li>
+          <li>Deliver world-class client experiences</li>
+          <li>Create predictable recurring revenue</li>
+          <li>Scale without sacrificing quality</li>
+        </ul>
+      </div>
+      <div class="mission-col">
+        <div class="mission-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
+        <div class="m-name">Walter</div>
+        <div class="m-label">The Mission</div>
+        <ul>
+          <li>Become Creative Director</li>
+          <li>Own creative operations</li>
+          <li>Build production systems</li>
+          <li>Lead freelancers</li>
+          <li>Improve delivery</li>
+          <li>Create consistency</li>
+        </ul>
+      </div>
+      <div class="mission-col">
+        <div class="mission-ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/><path d="M3 21h18"/></svg></div>
+        <div class="m-name">Lo</div>
+        <div class="m-label">The Mission</div>
+        <ul>
+          <li>Sales</li>
+          <li>Partnerships</li>
+          <li>Marketing</li>
+          <li>Business development</li>
+          <li>Automation</li>
+          <li>Product development</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mission-connector reveal">
+      <span class="mc-line"></span>
+      <span class="serif">Different roles. One mission. Built together.</span>
+      <span class="mc-line"></span>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 17 90-DAY EXECUTION PLAN -->
+<section id="ninety-day">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">17</span> 90-Day Execution Plan</div>
+    <h2 class="section-title reveal">Six Executive<br>Initiatives</h2>
+    <p class="lead reveal">Each initiative below is a focused campaign for the next 90 days &mdash; with a clear mission, why it matters, the objectives that get us there, and how we'll know it's working. The progress trackers are illustrative starting points we'll update together.</p>
+
+    <div class="init-grid">
+      <div class="init reveal" style="--fill:45%">
+        <div class="init-head">
+          <div class="init-n"><small>Initiative</small>01</div>
+          <div class="init-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></div>
+        </div>
+        <h3>Creative Excellence</h3>
+        <div class="init-block"><span class="lbl">Mission</span><p class="init-mission">Build creative consistency that requires less founder oversight.</p></div>
+        <div class="init-block"><span class="lbl">Why It Matters</span><p class="init-why">Consistent, on-brand work is what lets us take on more clients without quality slipping &mdash; and frees Lo to focus on growth.</p></div>
+        <div class="init-block"><span class="lbl">Key Objectives</span><ul><li>Master SD Auto Style</li><li>Learn every client brand</li><li>Reduce revisions</li><li>Build editing templates</li><li>Improve consistency</li></ul></div>
+        <div class="init-success"><p><strong>Success:</strong> Creative work is consistently delivered at DGM standards.</p></div>
+        <div class="init-track">
+          <div class="init-track-top"><span class="t-lbl">Progress Tracker</span><span class="t-val">Building</span></div>
+          <div class="init-bar"><span></span></div>
+          <div class="init-impact"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg><span>Est. Impact &middot; <strong>Higher output, fewer revisions</strong></span></div>
+        </div>
+      </div>
+
+      <div class="init reveal" style="--fill:38%">
+        <div class="init-head">
+          <div class="init-n"><small>Initiative</small>02</div>
+          <div class="init-ico"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
+        </div>
+        <h3>Production Operations</h3>
+        <div class="init-block"><span class="lbl">Mission</span><p class="init-mission">Create smoother, faster production systems.</p></div>
+        <div class="init-block"><span class="lbl">Why It Matters</span><p class="init-why">Every bottleneck removed is capacity gained. Clean operations let us deliver more with less friction as we scale.</p></div>
+        <div class="init-block"><span class="lbl">Key Objectives</span><ul><li>Organize workflows</li><li>Improve scheduling</li><li>Build SOPs</li><li>Standardize file organization</li><li>Improve efficiency</li></ul></div>
+        <div class="init-success"><p><strong>Success:</strong> Projects move through production with minimal bottlenecks.</p></div>
+        <div class="init-track">
+          <div class="init-track-top"><span class="t-lbl">Progress Tracker</span><span class="t-val">In Progress</span></div>
+          <div class="init-bar"><span></span></div>
+          <div class="init-impact"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg><span>Est. Impact &middot; <strong>Faster turnaround, more capacity</strong></span></div>
+        </div>
+      </div>
+
+      <div class="init reveal" style="--fill:30%">
+        <div class="init-head">
+          <div class="init-n"><small>Initiative</small>03</div>
+          <div class="init-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div>
+        </div>
+        <h3>Freelancer Network</h3>
+        <div class="init-block"><span class="lbl">Mission</span><p class="init-mission">Build production capacity beyond ourselves.</p></div>
+        <div class="init-block"><span class="lbl">Why It Matters</span><p class="init-why">A vetted bench means we can say yes to more work without burning out &mdash; and gives Walter a team to lead.</p></div>
+        <div class="init-block"><span class="lbl">Key Objectives</span><ul><li>Build freelancer database</li><li>Recruit editors</li><li>Recruit videographers</li><li>Recruit photographers</li><li>Recruit designers</li><li>Portfolio reviews</li><li>Test projects</li></ul></div>
+        <div class="init-success"><p><strong>Success:</strong> Reliable creative bench established.</p></div>
+        <div class="init-track">
+          <div class="init-track-top"><span class="t-lbl">Progress Tracker</span><span class="t-val">Starting</span></div>
+          <div class="init-bar"><span></span></div>
+          <div class="init-impact"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg><span>Est. Impact &middot; <strong>Scalable capacity on demand</strong></span></div>
+        </div>
+      </div>
+
+      <div class="init reveal" style="--fill:42%">
+        <div class="init-head">
+          <div class="init-n"><small>Initiative</small>04</div>
+          <div class="init-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/><path d="M12 3v2M12 19v2"/></svg></div>
+        </div>
+        <h3>Podcast Authority System</h3>
+        <div class="init-block"><span class="lbl">Mission</span><p class="init-mission">Turn the Authority System into a repeatable operating system.</p></div>
+        <div class="init-block"><span class="lbl">Why It Matters</span><p class="init-why">Our signature offer should run like a machine. The more repeatable it is, the more clients we can serve at a premium.</p></div>
+        <div class="init-block"><span class="lbl">Key Objectives</span><ul><li>Learn every stage</li><li>Improve workflows</li><li>Suggest improvements</li><li>Build automations</li><li>Improve client experience</li></ul></div>
+        <div class="init-success"><p><strong>Success:</strong> The system becomes faster, more scalable, and easier to deliver.</p></div>
+        <div class="init-track">
+          <div class="init-track-top"><span class="t-lbl">Progress Tracker</span><span class="t-val">Building</span></div>
+          <div class="init-bar"><span></span></div>
+          <div class="init-impact"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg><span>Est. Impact &middot; <strong>Premium offer that scales</strong></span></div>
+        </div>
+      </div>
+
+      <div class="init reveal" style="--fill:25%">
+        <div class="init-head">
+          <div class="init-n"><small>Initiative</small>05</div>
+          <div class="init-ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        </div>
+        <h3>Marketing &amp; Business Growth</h3>
+        <div class="init-block"><span class="lbl">Mission</span><p class="init-mission">Contribute beyond production.</p></div>
+        <div class="init-block"><span class="lbl">Why It Matters</span><p class="init-why">The best creative leaders understand the business. Thinking about offers and growth is the path from editor to owner-minded leader.</p></div>
+        <div class="init-block"><span class="lbl">Key Objectives</span><ul><li>Learn every offer</li><li>Understand pricing</li><li>Participate in strategy</li><li>Suggest marketing ideas</li><li>Improve client experience</li></ul></div>
+        <div class="init-success"><p><strong>Success:</strong> Contribute to business growth, not just editing.</p></div>
+        <div class="init-track">
+          <div class="init-track-top"><span class="t-lbl">Progress Tracker</span><span class="t-val">Emerging</span></div>
+          <div class="init-bar"><span></span></div>
+          <div class="init-impact"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg><span>Est. Impact &middot; <strong>Owner-level thinking</strong></span></div>
+        </div>
+      </div>
+
+      <div class="init reveal" style="--fill:48%">
+        <div class="init-head">
+          <div class="init-n"><small>Initiative</small>06</div>
+          <div class="init-ico"><svg viewBox="0 0 24 24"><path d="M12 2c3 2 5 5 5 9a5 5 0 01-10 0c0-4 2-7 5-9z"/><path d="M8 14c-2 1-3 3-3 6 2 0 3-1 4-2M16 14c2 1 3 3 3 6-2 0-3-1-4-2"/></svg></div>
+        </div>
+        <h3>Leadership Development</h3>
+        <div class="init-block"><span class="lbl">Mission</span><p class="init-mission">Become someone the business can depend on.</p></div>
+        <div class="init-block"><span class="lbl">Why It Matters</span><p class="init-why">This is the one that unlocks all the others. Reliability and ownership are what turn a role into leadership.</p></div>
+        <div class="init-block"><span class="lbl">Key Objectives</span><ul><li>Solve problems</li><li>Think proactively</li><li>Improve systems</li><li>Document processes</li><li>Communicate consistently</li><li>Take ownership</li></ul></div>
+        <div class="init-success"><p><strong>Success:</strong> Operate independently while helping the team perform at a higher level.</p></div>
+        <div class="init-track">
+          <div class="init-track-top"><span class="t-lbl">Progress Tracker</span><span class="t-val">Growing</span></div>
+          <div class="init-bar"><span></span></div>
+          <div class="init-impact"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg><span>Est. Impact &middot; <strong>Founder-level trust</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 18 6-MONTH VISION -->
+<section id="six-month">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">18</span> 6-Month Vision</div>
+    <h2 class="section-title reveal">The Future<br>State</h2>
+    <p class="lead reveal">Forget tasks for a moment. Here's what each part of the operation looks like six months from now if we execute the plan &mdash; the state we're building toward, not the to-do list to get there.</p>
+
+    <div class="future-grid">
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></div><h3>Creative Department</h3></div>
+        <p class="f-state">A real department with clear standards, not a one-person operation. Work ships on-brand by default.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div><h3>Production</h3></div>
+        <p class="f-state">A predictable pipeline where projects flow start-to-finish with minimal founder involvement.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div><h3>Freelancers</h3></div>
+        <p class="f-state">A trusted, vetted bench Walter can deploy and lead &mdash; capacity that scales up and down as needed.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 13c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Client Experience</h3></div>
+        <p class="f-state">Clients feel taken care of at every touchpoint &mdash; smooth onboarding, clear communication, consistent delivery.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div><h3>Internal Systems</h3></div>
+        <p class="f-state">SOPs and templates for everything that repeats &mdash; the business runs on documented systems, not memory.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Operations</h3></div>
+        <p class="f-state">Day-to-day runs itself. Scheduling, files, and hand-offs are standardized and reliable.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+      <div class="future reveal">
+        <div class="future-top"><div class="future-ico"><svg viewBox="0 0 24 24"><path d="M12 2c3 2 5 5 5 9a5 5 0 01-10 0c0-4 2-7 5-9z"/><path d="M8 14c-2 1-3 3-3 6 2 0 3-1 4-2M16 14c2 1 3 3 3 6-2 0-3-1-4-2"/></svg></div><h3>Leadership</h3></div>
+        <p class="f-state">Walter operating as a true creative lead &mdash; owning outcomes, mentoring the bench, trusted with decisions.</p>
+        <span class="f-chip">6-Month State</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 19 SHARED BUSINESS GOALS -->
+<section id="shared-goals">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">19</span> Shared Business Goals</div>
+    <h2 class="section-title reveal">Different Work,<br>Shared Outcome</h2>
+    <p class="lead reveal">Here's how the work splits across the next stretch. Three different sets of responsibilities, all pointed at the same result &mdash; a stronger, more valuable Daily Grind Media.</p>
+
+    <div class="goals-grid">
+      <div class="goal-col reveal">
+        <div class="g-name">Business</div>
+        <div class="g-label">Company Goals</div>
+        <ul>
+          <li>Increase recurring revenue</li>
+          <li>Build automations</li>
+          <li>Launch DGM OS</li>
+          <li>Launch client dashboards</li>
+          <li>Grow freelancer network</li>
+          <li>Improve profitability</li>
+        </ul>
+      </div>
+      <div class="goal-col reveal">
+        <div class="g-name">Walter</div>
+        <div class="g-label">Creative &amp; Ops</div>
+        <ul>
+          <li>Manage creative</li>
+          <li>Lead freelancers</li>
+          <li>Quality control</li>
+          <li>Improve systems</li>
+          <li>Build production capacity</li>
+        </ul>
+      </div>
+      <div class="goal-col reveal">
+        <div class="g-name">Lo</div>
+        <div class="g-label">Growth &amp; Strategy</div>
+        <ul>
+          <li>Close new clients</li>
+          <li>Build partnerships</li>
+          <li>Expand offers</li>
+          <li>Build automations</li>
+          <li>Grow the company</li>
+        </ul>
+      </div>
+    </div>
+    <div class="goals-tagline reveal">
+      <div class="serif">Different responsibilities. Shared outcome.</div>
+      <div class="sub">We rise or fall together</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 20 LEADERSHIP READINESS DASHBOARD -->
+<section id="readiness">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">20</span> Leadership Readiness Dashboard</div>
+    <h2 class="section-title reveal">Growing Into<br>The Role</h2>
+    <p class="lead reveal">This is a conversation framework, not a grade. It's a shared way to see where the momentum is strong and where we're still building &mdash; so our check-ins are honest, specific, and forward-looking. The indicators are illustrative of the trajectory we're after.</p>
+
+    <div class="kpi-grid">
+      <div class="kpi reveal" style="--fill:72%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg></div><h3>Creative Leadership</h3></div>
+        <p>Setting the standard and guiding the creative direction of the work.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Trending Up</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:66%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div><h3>Production Management</h3></div>
+        <p>Keeping projects moving and the pipeline flowing smoothly.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Building</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:78%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h11"/></svg></div><h3>Ownership</h3></div>
+        <p>Taking full responsibility for outcomes end to end.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Trending Up</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:70%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M8 10h8M8 14h5"/><path d="M21 12a8 8 0 01-11.5 7.2L3 21l1.8-6.5A8 8 0 1121 12z"/></svg></div><h3>Communication</h3></div>
+        <p>Clear, consistent updates that keep everyone aligned.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Building</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:74%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0012 2z"/></svg></div><h3>Problem Solving</h3></div>
+        <p>Spotting and resolving issues before they escalate.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Trending Up</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:62%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div><h3>Systems Thinking</h3></div>
+        <p>Building repeatable processes instead of one-off fixes.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Emerging</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:58%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6a3 3 0 010 6M21 20c0-2.4-1.4-4.5-3.5-5.5"/></svg></div><h3>Freelancer Management</h3></div>
+        <p>Directing and developing the creative bench.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Emerging</strong></div>
+      </div>
+      <div class="kpi reveal" style="--fill:80%">
+        <div class="kpi-top"><div class="kpi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 13c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Client Experience</h3></div>
+        <p>Making every client feel like the most important one.</p>
+        <div class="kpi-bar"><span></span></div>
+        <div class="kpi-meta"><span>Readiness</span><strong>Trending Up</strong></div>
+      </div>
+    </div>
+    <div class="readiness-note reveal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg> A conversation framework &mdash; not a performance grade.</div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 21 MONTHLY LEADERSHIP REVIEW -->
+<section id="monthly-review">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">21</span> Monthly Leadership Review</div>
+    <h2 class="section-title reveal">Our Monthly<br>Dashboard</h2>
+    <p class="lead reveal">This is the reusable dashboard for our monthly leadership meeting &mdash; a single place to see where the business stands, celebrate wins, and set the next priorities together. Values shown are placeholders we'll fill in each month.</p>
+
+    <div class="review-panel reveal">
+      <div class="review-header">
+        <h3>Leadership Review &middot; Month 00</h3>
+        <span class="rh-tag">Reviewed Together</span>
+      </div>
+      <div class="metrics-row">
+        <div class="mtile"><div class="mt-lbl">Revenue</div><div class="mt-val"><span class="u">$</span>&mdash;</div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Recurring Revenue</div><div class="mt-val"><span class="u">$</span>&mdash;</div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">New Clients</div><div class="mt-val">&mdash;</div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Projects Delivered</div><div class="mt-val">&mdash;</div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Production Efficiency</div><div class="mt-val">&mdash;<span class="u">%</span></div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Automation Progress</div><div class="mt-val">&mdash;<span class="u">%</span></div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Freelancer Growth</div><div class="mt-val">&mdash;</div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Client Satisfaction</div><div class="mt-val">&mdash;<span class="u">/5</span></div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+        <div class="mtile"><div class="mt-lbl">Systems Built</div><div class="mt-val">&mdash;</div><div class="mt-trend"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/></svg>Track monthly</div></div>
+      </div>
+      <div class="review-notes">
+        <div class="review-note-col blank">
+          <div class="rn-lbl"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.2 8.7l5.4-.8z"/></svg>Monthly Wins</div>
+          <ul><li>To be filled in together each month&hellip;</li></ul>
+        </div>
+        <div class="review-note-col blank">
+          <div class="rn-lbl"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Next Priorities</div>
+          <ul><li>To be set together each month&hellip;</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- 22 WHAT SUCCESS LOOKS LIKE ONE YEAR FROM NOW -->
+<section id="one-year">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="sec-num">22</span> One Year From Now</div>
+    <h2 class="section-title reveal">What We've<br>Built Together</h2>
+    <p class="lead year-lead reveal">Picture it a year out. Not a number on a paycheck &mdash; the actual company we've built, the roles we've grown into, and the team standing alongside us. This is what all the execution adds up to.</p>
+
+    <div class="vision-grid">
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18M9 21v-6h6v6"/></svg></div>
+        <div class="vlabel">The Company</div>
+        <h3>Daily Grind Media</h3>
+        <ul>
+          <li>Premium creative agency</li>
+          <li>Predictable recurring revenue</li>
+          <li>Strong systems</li>
+          <li>World-class client experience</li>
+        </ul>
+      </div>
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
+        <div class="vlabel">Your Role</div>
+        <h3>Walter</h3>
+        <ul>
+          <li>Confident Creative Director</li>
+          <li>Managing production</li>
+          <li>Leading freelancers</li>
+          <li>Driving quality</li>
+          <li>Helping shape the future of DGM</li>
+        </ul>
+      </div>
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5h-5"/><path d="M3 21h18"/></svg></div>
+        <div class="vlabel">The Partnership</div>
+        <h3>Lo</h3>
+        <ul>
+          <li>Focused on sales</li>
+          <li>Partnerships</li>
+          <li>Marketing</li>
+          <li>Product development</li>
+          <li>Company growth</li>
+        </ul>
+      </div>
+      <div class="vcard reveal">
+        <div class="vcard-ico"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="8" r="2.5"/><circle cx="12" cy="15" r="2.5"/><path d="M2 18c0-2.2 2-4 5-4M22 18c0-2.2-2-4-5-4M7 21c0-2 2.2-3.5 5-3.5s5 1.5 5 3.5"/></svg></div>
+        <div class="vlabel">The Team</div>
+        <h3>The Team</h3>
+        <ul>
+          <li>Trusted freelancer network</li>
+          <li>Internship pipeline</li>
+          <li>Standardized systems</li>
+          <li>Reliable production</li>
+          <li>Clear leadership</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="finale-roadmap reveal">
+      <div class="finale-label">The Compounding Path</div>
+      <div class="finale-chain">
+        <span class="fc-item">Shared Vision</span><span class="fc-arrow">&rarr;</span>
+        <span class="fc-item">Execution</span><span class="fc-arrow">&rarr;</span>
+        <span class="fc-item">Systems</span><span class="fc-arrow">&rarr;</span>
+        <span class="fc-item">Leadership</span><span class="fc-arrow">&rarr;</span>
+        <span class="fc-item">Business Growth</span><span class="fc-arrow">&rarr;</span>
+        <span class="fc-item">Opportunity</span><span class="fc-arrow">&rarr;</span>
+        <span class="fc-item final">Long-Term Success</span>
+      </div>
+    </div>
+
+    <div class="founder-close reveal">
+      <p>&ldquo;We're not building jobs. We're building <span class="accent">a company that creates opportunities</span> for everyone who helps build it.&rdquo;</p>
+      <span class="attrib">&mdash; Lo, Founder &middot; Daily Grind Media</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider-block"><div class="wrap"><div class="divider"></div></div></div>
+
+<!-- FINAL FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="lockup">
+      <div class="lockup-mark"><span></span><span></span><span></span><span></span></div>
+      <div class="lockup-name">Daily Grind Media</div>
+    </div>
+    <div class="footer-mark">We Build Together.</div>
+    <div class="footer-tag">Stay On That Daily Grind.</div>
+    <div class="footer-meta">Growth Roadmap &amp; Execution Strategy &middot; Walter &times; Lo &middot; Daily Grind Media</div>
+  </div>
+</footer>
+
 
 <script>
   // Reveal on scroll
